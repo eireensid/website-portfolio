@@ -1,17 +1,10 @@
 <template>
+  <Header />
   <div>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <NuxtLink to="/">Main</NuxtLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <div>
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>
+
+<script setup>
+
+</script>

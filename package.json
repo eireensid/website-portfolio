@@ -11,6 +11,8 @@
   "devDependencies": {
     "@types/node": "^18",
     "nuxt": "^3.4.2",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
     "typescript": "^5.0.4"
   }
 }

@@ -1,0 +1,3 @@
+@mixin transition($style: all) {
+  transition: $style .25s ease-in-out;
+}
