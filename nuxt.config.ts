@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
 
      head: {
-       title: 'Start',
+       title: 'My portfolio website',
        link: [
          {
            rel: 'icon',
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "~/assets/style/_vars.scss";',
+          additionalData: '@use "./assets/style/_mixins.scss" as *; @use "./assets/style/_vars.scss" as *;'
         }
       }
     }

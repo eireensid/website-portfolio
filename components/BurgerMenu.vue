@@ -24,7 +24,6 @@ const menuIsOpen = ref<boolean>(false)
 </script>
 
 <style lang="scss">
-@import '@/assets/style/main.scss';
 
 .burger {
 
