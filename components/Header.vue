@@ -11,5 +11,10 @@
 <style lang="scss" scoped>
 .header {
   padding: 24px 120px;
+  background: $background;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>

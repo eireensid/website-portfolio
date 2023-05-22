@@ -1,10 +1,16 @@
 <template>
   <Header />
-  <div>
+  <main class="main">
     <slot />
-  </div>
+  </main>
 </template>
 
 <script setup>
 
 </script>
+
+<style lang="scss">
+.main {
+  padding-top: 110px;
+}
+</style>

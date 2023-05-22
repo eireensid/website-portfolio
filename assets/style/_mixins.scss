@@ -1,3 +1,37 @@
+@use "./assets/style/_vars.scss" as *;
+
 @mixin transition($style: all) {
   transition: $style .25s ease-in-out;
+}
+
+@mixin flex($align: center, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin font($size, $line, $color: #212121, $weight: 400) {
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin link($color: $hover) {
+  @include transition;
+
+  &:hover {
+    color: $color;
+  }
+}
+
+%hide {
+  opacity: 0;
+  visibility: hidden;
+  @include transition;
+}
+
+%show {
+  opacity: 1;
+  visibility: visible;
 }
