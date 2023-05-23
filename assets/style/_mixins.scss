@@ -28,7 +28,6 @@
 %hide {
   opacity: 0;
   visibility: hidden;
-  @include transition;
 }
 
 %show {

@@ -11,6 +11,6 @@
 
 <style lang="scss">
 .main {
-  padding-top: 110px;
+  padding: 110px 8.3% 0;
 }
 </style>

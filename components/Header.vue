@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <BurgerMenu />
-    <div class="header__right"></div>
+    <Button name="Записаться" />
   </header>
 </template>
 
@@ -10,11 +10,12 @@
 
 <style lang="scss" scoped>
 .header {
-  padding: 24px 120px;
+  padding: 24px 8.3%;
   background: $background;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  @include flex(center, space-between);
 }
 </style>

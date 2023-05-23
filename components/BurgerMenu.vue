@@ -61,7 +61,6 @@ const menuLinks = [
     background-size: cover;
     @extend %hide;
     transform: translateX(-100%);
-    transition: all .5s ease-in-out;
   }
 
   &__content {
@@ -117,6 +116,10 @@ const menuLinks = [
       }
     }
 
+    .burger__curtain {
+      transition: all .5s ease-in-out;
+    }
+
     .burger__menu, .burger__curtain {
       @extend %show;
       transform: translateX(0);
@@ -125,6 +128,7 @@ const menuLinks = [
 
   &__menu {
    @extend %hide;
+   @include transition;
   }
 
   &__list {
