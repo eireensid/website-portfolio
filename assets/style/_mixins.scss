@@ -19,9 +19,11 @@
 
 @mixin link($color: $hover) {
   @include transition;
+  cursor: pointer;
 
   &:hover {
     color: $color;
+    text-decoration: line-through;
   }
 }
 
@@ -33,4 +35,15 @@
 %show {
   opacity: 1;
   visibility: visible;
+}
+
+%title {
+  text-transform: uppercase;
+  @include font(48px, 65px, $black, 700);
+  margin-bottom: 36px;
+}
+
+%description {
+  @include font(24px, 38px, $hover, 500);
+  margin-bottom: 36px;
 }

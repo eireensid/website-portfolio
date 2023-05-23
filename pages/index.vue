@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h2>Hello</h2>
-    <div v-for="p in products">
-      <NuxtLink>{{p.title}}</NuxtLink>
-    </div>
+    <AboutSection />
+<!--    <div v-for="p in products">-->
+<!--      <NuxtLink>{{p.title}}</NuxtLink>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script setup>
+  import AboutSection from "../components/pages/index/AboutSection";
 
   const { data: products } = await useFetch('https://fakestoreapi.com/products')
 

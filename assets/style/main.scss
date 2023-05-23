@@ -19,6 +19,10 @@ ul, ol {
   list-style: none;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -36,4 +40,12 @@ button {
   background: none;
   padding: 0;
   cursor: pointer;
+}
+
+.title {
+  @extend %title;
+}
+
+.description {
+  @extend %description;
 }

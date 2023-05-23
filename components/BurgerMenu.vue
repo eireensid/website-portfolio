@@ -10,7 +10,7 @@
         <nav>
           <ul class="burger__list">
             <li class="burger__list-item" v-for="link in menuLinks" :key="link.name">
-              <NuxtLink to="link.href">{{ link.name }}</NuxtLink>
+              <NuxtLink :to="link.href">{{ link.name }}</NuxtLink>
             </li>
           </ul>
         </nav>
