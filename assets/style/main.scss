@@ -42,6 +42,10 @@ button {
   cursor: pointer;
 }
 
+.section {
+  margin-bottom: 90px;
+}
+
 .title {
   @extend %title;
 }

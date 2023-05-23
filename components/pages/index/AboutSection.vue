@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section">
     <h2 class="title">Хочу создавать красоту, а не только ею восхищаться.</h2>
     <p class="description">Давайте познакомимся поближе</p>
     <div class="table">
