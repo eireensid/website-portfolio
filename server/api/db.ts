@@ -4,7 +4,7 @@ export default defineEventHandler((event) => {
       {
         code: 'about',
         name: "Обо мне / хобби",
-        text: 'Привет, меня зовут Ира Люблю изучать языки',
+        text: 'Привет, меня зовут Ира Люблю изучать языки Хобби',
         order: 4
       },
       {
@@ -71,7 +71,45 @@ export default defineEventHandler((event) => {
       }
     ],
     technologies: [
-
+      {
+        name: 'HTML5'
+      },
+      {
+        name: 'CSS3'
+      },
+      {
+        name: 'JavaScript'
+      },
+      {
+        name: 'Vue'
+      },
+      {
+        name: 'React'
+      },
+      {
+        name: 'Nuxt'
+      },
+      {
+        name: 'Next'
+      },
+      {
+        name: 'TypeScript'
+      },
+      {
+        name: 'Pug'
+      },
+      {
+        name: 'SASS, SCSS'
+      },
+      {
+        name: 'Gulp'
+      },
+      {
+        name: 'Firebase'
+      },
+      {
+        name: 'Git'
+      }
     ]
   }
 })

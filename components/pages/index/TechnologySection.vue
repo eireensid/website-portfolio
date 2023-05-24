@@ -1,31 +1,14 @@
 <template>
   <div class="section">
     <h2 class="title">Технологии</h2>
-    <p class="description">Используемые в проектах выше</p>
+    <p class="description">Которые я использовала в своих проектах</p>
     <div class="table">
-<!--      <div class="table__column" v-for="project in projects" :key="project.name">-->
-<!--        <div class="table__content">-->
-<!--          <div class="table__photo">-->
-<!--            <img :src="project.photo" :alt="project.name">-->
-<!--          </div>-->
-<!--          <NuxtLink :to="project.link" target="_blank" class="table__title">{{ project.name }}</NuxtLink>-->
-<!--          <div class="table__row">-->
-<!--            <p class="table__text">{{ project.text }}</p>-->
-<!--            <NuxtLink :to="project.link" target="_blank" class="table__arrow">-->
-<!--              <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">-->
-<!--                <g clip-path="url(#clip0_12_392)">-->
-<!--                  <path d="M9.5035 22.2741L9.5035 20.6344L19.4748 20.6344L6.84499 8.00456L8.00445 6.8451L20.6343 19.4749L20.6343 9.5036H22.274V22.2741H9.5035Z"/>-->
-<!--                </g>-->
-<!--                <defs>-->
-<!--                  <clipPath id="clip0_12_392">-->
-<!--                    <rect width="21" height="21" fill="white" transform="matrix(0.707107 0.707107 0.707107 -0.707107 0 14.8496)"/>-->
-<!--                  </clipPath>-->
-<!--                </defs>-->
-<!--              </svg>-->
-<!--            </NuxtLink>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="table__column" v-for="(tech, i) in technologies" :key="tech.name">
+        <div class="table__photo">
+          <img :src="iconLink(i + 1)" :alt="tech.name">
+        </div>
+        <p class="table__text">{{ tech.name }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,12 +18,46 @@ interface Props {
   technologies: Array<object>
 }
 const props = defineProps<Props>()
+
+const icons = {
+  1: 'icon1',
+  2: 'icon2',
+  3: 'icon3'
+}
+
+const iconLink = (ind) => {
+  if (ind % 3 === 1) return `/img/${icons[1]}.svg`
+  if (ind % 3 === 2) return `/img/${icons[2]}.svg`
+  if (ind % 3 === 0) return `/img/${icons[3]}.svg`
+}
+
 </script>
 
 <style lang="scss" scoped>
 .table {
-  border: 1px solid $black;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  border-left: 1px solid $black;
+  border-top: 1px solid $black;
+
+  &__column {
+    border: 1px solid $black;
+    border-left: none;
+    border-top: none;
+    @include flex(center);
+    flex-direction: column;
+    padding: 32px;
+
+    &:nth-child(2n) {
+      p {
+        color: $black;
+      }
+    }
+  }
+
+  &__text {
+    @include font(24px, 28px, 700, $hover);
+    padding-top: 12px;
+  }
 }
 </style>
