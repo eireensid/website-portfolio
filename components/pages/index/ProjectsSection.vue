@@ -1,9 +1,9 @@
 <template>
   <div class="section">
     <h2 class="title">Проекты</h2>
-    <p class="description">Мой опыт создания функционала и использования технологий</p>
+    <p class="description">Мой опыт создания верстки и реализации функционала</p>
     <div class="table">
-      <div class="table__column" v-for="project in data.projects" :key="project.name">
+      <div class="table__column" v-for="project in projects" :key="project.name">
         <div class="table__content">
           <div class="table__photo">
             <img :src="project.photo" :alt="project.name">
@@ -31,7 +31,10 @@
 </template>
 
 <script lang="ts" setup>
-const { data } = await useFetch('/api/db')
+interface Props {
+  projects: Array<object>
+}
+const props = defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>

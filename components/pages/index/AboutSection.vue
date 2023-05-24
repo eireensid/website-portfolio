@@ -5,7 +5,7 @@
     <div class="table">
       <div class="table__left">
         <ul class="table__list">
-          <li class="table__list-item" v-for="item in data.about.tabs" :key="item.name">
+          <li class="table__list-item" v-for="item in about.tabs" :key="item.name">
             {{ item.name }}
           </li>
         </ul>
@@ -23,8 +23,10 @@
 </template>
 
 <script lang="ts" setup>
-
-const { data } = await useFetch('/api/db')
+interface Props {
+  about: object
+}
+const props = defineProps<Props>()
 
 </script>
 

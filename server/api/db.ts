@@ -4,19 +4,19 @@ export default defineEventHandler((event) => {
       tabs: [
         {
           name: "Обо мне / хобби",
-          order: 1
+          order: 4
         },
         {
           name: "Образование / обучение",
-          order: 2
-        },
-        {
-          name: "Опыт работы",
           order: 3
         },
         {
+          name: "Опыт работы",
+          order: 1
+        },
+        {
           name: "Дополнительно / проекты",
-          order: 4
+          order: 2
         }
       ],
       content: [
@@ -69,6 +69,9 @@ export default defineEventHandler((event) => {
         link: 'https://semifur.ru/',
         order: 6
       }
+    ],
+    technologies: [
+
     ]
   }
 })
