@@ -18,7 +18,7 @@ const props = defineProps<Props>()
   &__content {
     padding: 16px 32px;
     border: 1px solid $black;
-    @include font(16px, 16px, $black, 600);
+    @include font(16px, 16px, 600, $black);
     @include link;
 
     &:hover {

@@ -10,7 +10,7 @@
   justify-content: $justify;
 }
 
-@mixin font($size, $line, $color: #212121, $weight: 400) {
+@mixin font($size, $line, $weight: 400, $color: #212121) {
   font-size: $size;
   line-height: $line;
   font-weight: $weight;
@@ -23,13 +23,13 @@
 
   &:hover {
     color: $color;
-    text-decoration: line-through;
   }
 }
 
 %hide {
   opacity: 0;
   visibility: hidden;
+  @include transition;
 }
 
 %show {
@@ -39,11 +39,11 @@
 
 %title {
   text-transform: uppercase;
-  @include font(48px, 65px, $black, 700);
+  @include font(48px, 65px, 700, $black);
   margin-bottom: 36px;
 }
 
 %description {
-  @include font(24px, 38px, $hover, 500);
+  @include font(24px, 38px, 500, $black);
   margin-bottom: 36px;
 }

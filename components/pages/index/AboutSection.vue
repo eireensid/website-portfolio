@@ -5,7 +5,7 @@
     <div class="table">
       <div class="table__left">
         <ul class="table__list">
-          <li class="table__list-item" v-for="item in aboutList" :key="item.name">
+          <li class="table__list-item" v-for="item in data.about.tabs" :key="item.name">
             {{ item.name }}
           </li>
         </ul>
@@ -23,20 +23,6 @@
 </template>
 
 <script lang="ts" setup>
-const aboutList = [
-  {
-    "name": "Обо мне / хобби"
-  },
-  {
-    "name": "Образование / обучение"
-  },
-  {
-    "name": "Опыт работы"
-  },
-  {
-    "name": "Дополнительно / проекты"
-  }
-]
 
 const { data } = await useFetch('/api/db')
 
@@ -54,8 +40,12 @@ const { data } = await useFetch('/api/db')
 
   &__list-item {
     padding: 30px 36px;
-    @include font(18px, 18px, #212121, 600);
-    @include link;
+    @include font(18px, 18px, 600, #212121);
+    @include link($black);
+
+    &:hover {
+      text-decoration: line-through;
+    }
 
     &:not(:last-child) {
       border-bottom: 1px solid $black;

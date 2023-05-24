@@ -128,7 +128,6 @@ const menuLinks = [
 
   &__menu {
    @extend %hide;
-   @include transition;
   }
 
   &__list {
@@ -138,7 +137,7 @@ const menuLinks = [
 
     &-item {
       text-transform: uppercase;
-      @include font(24px, 130%, #E8E9EB);
+      @include font(24px, 130%, 400, #E8E9EB);
       @include link($black);
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <BurgerMenu />
-    <Button name="Записаться" />
+    <Button name="Связаться" />
   </header>
 </template>
 
