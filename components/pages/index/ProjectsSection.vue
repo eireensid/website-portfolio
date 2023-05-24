@@ -3,13 +3,14 @@
     <h2 class="title">Проекты</h2>
     <p class="description">Мой опыт работы</p>
     <div class="table">
-      <div class="table__column" v-for="project in projectList" :key="project.name">
+      <div class="table__column" v-for="project in data.projects" :key="project.name">
         <div class="table__content">
           <div class="table__photo">
-
+            <img :src="project.photo" :alt="project.name">
           </div>
           <h3 class="table__title">{{ project.name }}</h3>
           <p class="table__text">{{ project.text }}</p>
+          <NuxtLink></NuxtLink>
         </div>
       </div>
     </div>
@@ -17,21 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-const projectList = [
-  {
-    "name": "Project 1",
-    "text": "Bla bla bla"
-  },
-  {
-    "name": "Project 2"
-  },
-  {
-    "name": "Project 3"
-  },
-  {
-    "name": "Project 4"
-  }
-]
+const { data } = await useFetch('/api/db')
 </script>
 
 <style lang="scss" scoped>
@@ -51,6 +38,17 @@ const projectList = [
   &__content {
     border-bottom: 1px solid $black;
     height: 100%;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 340px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 </style>

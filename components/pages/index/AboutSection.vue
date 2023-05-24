@@ -15,7 +15,7 @@
           <img src="/img/photo.jpg" alt="фото">
         </div>
         <div class="table__text">
-          <p>Hello</p>
+          <p></p>
         </div>
       </div>
     </div>
@@ -37,6 +37,9 @@ const aboutList = [
     "name": "Дополнительно / проекты"
   }
 ]
+
+const { data } = await useFetch('/api/db')
+
 </script>
 
 <style lang="scss" scoped>
@@ -68,6 +71,7 @@ const aboutList = [
     width: 280px;
     height: 280px;
     margin-right: 60px;
+    flex-shrink: 0;
 
     img {
       width: 100%;
