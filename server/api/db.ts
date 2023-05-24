@@ -1,31 +1,31 @@
 export default defineEventHandler((event) => {
   return {
-    about: {
-      tabs: [
-        {
-          name: "Обо мне / хобби",
-          order: 4
-        },
-        {
-          name: "Образование / обучение",
-          order: 3
-        },
-        {
-          name: "Опыт работы",
-          order: 1
-        },
-        {
-          name: "Дополнительно / проекты",
-          order: 2
-        }
-      ],
-      content: [
-        {
-          code: 'about',
-          title: 'jjj'
-        }
-      ]
-    },
+    about: [
+      {
+        code: 'about',
+        name: "Обо мне / хобби",
+        text: 'Привет, меня зовут Ира Люблю изучать языки',
+        order: 4
+      },
+      {
+        code: 'education',
+        name: "Образование / обучение",
+        text: '<p class="column-title">Образование</p> <p class="column-text">Высшее (Менеджмент)</p><p class="column-title">Дополнительное образование</p>',
+        order: 3
+      },
+      {
+        code: 'experience',
+        name: "Опыт работы",
+        text: 'Опыт работы',
+        order: 1
+      },
+      {
+        code: 'projects',
+        name: "Дополнительно / проекты",
+        text: '',
+        order: 2
+      }
+    ],
     projects: [
       {
         photo: '/img/domenika.png',

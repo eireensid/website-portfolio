@@ -5,17 +5,24 @@
     <div class="table">
       <div class="table__left">
         <ul class="table__list">
-          <li class="table__list-item" v-for="item in about.tabs" :key="item.name">
+          <li class="table__list-item" v-for="item in about" :key="item.name"
+              :class="{'table__list-item--active': item === curTab}"
+              @mouseover="changeTab(item)"
+          >
             {{ item.name }}
           </li>
         </ul>
       </div>
       <div class="table__right">
         <div class="table__photo">
-          <img src="/img/photo.jpg" alt="фото">
+          <img :class="photoShapeStyle(curTab.order)" src="/img/photo.jpg" alt="фото">
         </div>
-        <div class="table__text">
-          <p></p>
+        <div class="table__content">
+          <div class="table__text" v-if="curTab.code === 'experience'">
+            <p class="column-title">Опыт работы</p>
+            <p class="column-text">{{ years }} года {{ months }} месяцев </p>
+          </div>
+          <div class="table__text" v-html="curTab.text"></div>
         </div>
       </div>
     </div>
@@ -24,9 +31,35 @@
 
 <script lang="ts" setup>
 interface Props {
-  about: object
+  about: Array<object>
 }
 const props = defineProps<Props>()
+
+props.about.sort((a, b) => Number(a.order) - Number(b.order))
+
+let curTab = ref(props.about.find((tab) => Number(tab.order) === 1))
+
+const changeTab = (tab) => {
+  curTab.value = tab
+}
+
+const photoShapes = {
+  1: 'circle',
+  2: 'triangle',
+  3: 'rhomb',
+  4: 'rectangle'
+}
+
+const photoShapeStyle = (order) => {
+  return photoShapes[order]
+}
+
+const pastDate = '2020-09-10'
+const period = new Date(new Date().getTime() - new Date(pastDate).getTime())
+const years = period.getFullYear() - 1970 // at 1970 the date calendar starts
+const months = period.getMonth()
+
+console.log('years: ', years, ', month: ', months)
 
 </script>
 
@@ -45,7 +78,7 @@ const props = defineProps<Props>()
     @include font(18px, 18px, 600, #212121);
     @include link($black);
 
-    &:hover {
+    &:hover, &--active {
       text-decoration: line-through;
     }
 
@@ -69,7 +102,32 @@ const props = defineProps<Props>()
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 50%;
+
+      &.circle {
+        border-radius: 50%;
+      }
+
+      &.triangle {
+        clip-path: polygon(100% 0, 100% 0%, 50% 100%, 0 0%);
+      }
+
+      &.rhomb {
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      }
+    }
+  }
+
+  &__text ::v-deep {
+    @include font(16px, 26px);
+
+    .column-title {
+      @include font(18px, 26px, 500);
+      padding-bottom: 12px;
+    }
+
+    .column-text {
+      @include font(20px, 26px, 700);
+      padding-bottom: 12px;
     }
   }
 }
