@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section" id="about">
     <h2 class="title">Хочу создавать красоту, а не только ею восхищаться.</h2>
     <p class="description">Давайте познакомимся поближе</p>
     <div class="table">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

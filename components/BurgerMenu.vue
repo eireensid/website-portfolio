@@ -10,7 +10,11 @@
         <nav>
           <ul class="burger__list">
             <li class="burger__list-item" v-for="link in menuLinks" :key="link.name">
-              <NuxtLink :to="link.href">{{ link.name }}</NuxtLink>
+              <NuxtLink :to="link.href"
+                @click="menuIsOpen = false"
+              >
+                {{ link.name }}
+              </NuxtLink>
             </li>
           </ul>
         </nav>
@@ -28,19 +32,19 @@ const menuIsOpen = ref<boolean>(false)
 const menuLinks = [
   {
     "name": "Обо мне",
-    "href": "/"
+    "href": "#about"
   },
   {
     "name": "Проекты",
-    "href": "/"
+    "href": "#projects"
   },
   {
     "name": "Технологии",
-    "href": "/"
+    "href": "#technology"
   },
   {
     "name": "Контакты",
-    "href": "/"
+    "href": "#contacts"
   }
 ]
 
@@ -61,12 +65,14 @@ const menuLinks = [
     background-size: cover;
     @extend %hide;
     transform: translateX(-100%);
+    z-index: 2;
   }
 
   &__content {
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 3;
   }
 
   &__icon {

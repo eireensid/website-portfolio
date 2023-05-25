@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section" id="technology">
     <h2 class="title">Технологии</h2>
     <p class="description">Которые я использовала в своих проектах</p>
     <div class="table">
@@ -10,7 +10,7 @@
         <p class="table__text">{{ tech.name }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

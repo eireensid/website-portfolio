@@ -1,6 +1,6 @@
 <template>
-  <div class="section">
-    <h2 class="title">Связаться со мной</h2>
+  <section class="section" id="contacts">
+    <h2 class="title">Мои контакты</h2>
     <p class="description">Буду рада с вами пообщаться</p>
     <div class="table">
       <div class="table__column" v-for="cont in contacts" :key="cont.name">
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -40,6 +40,10 @@ const goToLink = (link) => {
 
     &:not(:nth-child(3n)) {
       border-right: 1px solid $black;
+    }
+
+    &:nth-child(4) {
+      border-top: none;
     }
   }
 

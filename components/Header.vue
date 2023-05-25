@@ -17,6 +17,7 @@ const goToLink = () => {
   background: $background;
   width: 100%;
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   @include flex(center, space-between);

@@ -18,6 +18,7 @@ const props = defineProps<Props>()
     position: relative;
     z-index: 1;
     background: linear-gradient(to right, $hover, $yellow);
+    @include font(16px, 16px, 600);
 
     &::before {
       content: "";

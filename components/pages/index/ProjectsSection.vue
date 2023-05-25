@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section" id="projects">
     <h2 class="title">Проекты</h2>
     <p class="description">Мой опыт создания верстки и реализации функционала</p>
     <div class="table">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
