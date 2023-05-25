@@ -137,7 +137,7 @@ const menuLinks = [
 
     &-item {
       text-transform: uppercase;
-      @include font(24px, 130%, 400, #E8E9EB);
+      @include font(24px, 130%, 400, $background);
       @include link($black);
     }
   }

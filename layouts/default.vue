@@ -3,6 +3,7 @@
   <main class="main">
     <slot />
   </main>
+  <Footer />
 </template>
 
 <script setup>

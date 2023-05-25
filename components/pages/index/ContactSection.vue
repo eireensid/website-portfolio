@@ -50,7 +50,7 @@ const goToLink = (link) => {
 
   &__link {
     @include font(20px, 26px, 700);
-    padding: 12px 0;
+    padding: 10px 0 12px;
     @include link;
   }
 }
