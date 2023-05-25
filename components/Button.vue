@@ -17,7 +17,7 @@ const props = defineProps<Props>()
     padding: 16px 32px;
     position: relative;
     z-index: 1;
-    background: linear-gradient(to right, $hover, $yellow);
+    background: $gradient;
     @include font(16px, 16px, 600);
 
     &::before {
@@ -35,7 +35,7 @@ const props = defineProps<Props>()
     &::after {
       content: attr(data);
       font-size: 16px;
-      background: linear-gradient(to left, $hover, $yellow);
+      background: $gradient;
       -webkit-background-clip: text;
       color: transparent;
       transition: 200ms;

@@ -82,7 +82,7 @@ const menuLinks = [
 
     &:hover {
       .burger__line {
-        background: $hover;
+        background: $orange;
       }
     }
   }
@@ -144,7 +144,10 @@ const menuLinks = [
     &-item {
       text-transform: uppercase;
       @include font(24px, 130%, 400, $background);
-      @include link($black);
+
+      a {
+        @include link($background);
+      }
     }
   }
 }

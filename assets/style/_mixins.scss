@@ -17,12 +17,13 @@
   color: $color;
 }
 
-@mixin link($color: $hover) {
+@mixin link($color: $black) {
   @include transition;
   cursor: pointer;
 
-  &:hover {
+  &:hover, &--active {
     color: $color;
+    text-decoration: line-through;
   }
 }
 

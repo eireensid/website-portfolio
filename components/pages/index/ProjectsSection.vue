@@ -71,6 +71,14 @@ const props = defineProps<Props>()
     margin: 16px 0 12px;
     @include font(24px, 28px, 700);
     @include link;
+
+    &:hover {
+      ~ .table__row {
+        svg {
+          transform: translate(5px, 5px);
+        }
+      }
+    }
   }
 
   &__row {
@@ -92,7 +100,7 @@ const props = defineProps<Props>()
 
     &:hover {
       svg {
-        fill: $hover;
+        transform: translate(5px, 5px);
       }
     }
   }

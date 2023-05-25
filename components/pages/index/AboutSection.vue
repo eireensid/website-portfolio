@@ -76,11 +76,7 @@ console.log('years: ', years, ', month: ', months)
   &__list-item {
     padding: 30px 36px;
     @include font(18px, 18px, 600, #212121);
-    @include link($black);
-
-    &:hover, &--active {
-      text-decoration: line-through;
-    }
+    @include link;
 
     &:not(:last-child) {
       border-bottom: 1px solid $black;
