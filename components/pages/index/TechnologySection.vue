@@ -48,15 +48,15 @@ const iconLink = (ind) => {
     flex-direction: column;
     padding: 32px;
 
-    &:nth-child(2n) {
-      p {
-        color: $black;
-      }
-    }
+    //&:nth-child(2n) {
+    //  p {
+    //    color: $black;
+    //  }
+    //}
   }
 
   &__text {
-    @include font(24px, 28px, 700, $hover);
+    @include font(24px, 28px, 700);
     padding-top: 12px;
   }
 }

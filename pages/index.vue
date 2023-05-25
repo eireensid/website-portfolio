@@ -3,7 +3,7 @@
     <AboutSection :about="data.about" />
     <ProjectsSection :projects="data.projects" />
     <TechnologySection :technologies="data.technologies" />
-    <ContactSection />
+    <ContactSection :contacts="data.contacts" />
   </div>
 </template>
 

@@ -110,6 +110,44 @@ export default defineEventHandler((event) => {
       {
         name: 'Git'
       }
+    ],
+    contacts: [
+      {
+        name: 'Резюме',
+        btn: {
+          name: 'Скачать',
+          href: 'https://docs.google.com/document/d/1C1hiBV71hpbMLT83pfPZQDImgIy3UET46HqCGzhzCmg/edit#'
+        }
+      },
+      {
+        name: 'Telegram',
+        link: {
+          name: '@eireen_sid',
+          href: 'https://t.me/eireen_sid'
+        }
+      },
+      {
+        name: 'Почта',
+        link: {
+          name: 'sidoren-irina@yandex.ru',
+          href: 'mailto:sidoren-irina@yandex.ru'
+        }
+      },
+      {},
+      {
+        name: 'Github',
+        link: {
+          name: 'https://github.com/eireensid',
+          href: 'https://github.com/eireensid'
+        }
+      },
+      {
+        name: 'LinkedIn',
+        link: {
+          name: 'https://www.linkedin.com',
+          href: 'https://www.linkedin.com/in/irina-sidorenko-3a565212a/'
+        }
+      }
     ]
   }
 })
