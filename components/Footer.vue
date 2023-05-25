@@ -15,7 +15,7 @@
   @include flex(center, flex-end);
 
   &__text {
-    @include font(18px, 24px, 500, $yellow);
+    @include font(18px, 24px, 500);
   }
 }
 </style>

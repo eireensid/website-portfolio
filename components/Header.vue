@@ -1,11 +1,14 @@
 <template>
   <header class="header">
     <BurgerMenu />
-    <Button name="Связаться" />
+    <Button name="Связаться" @click="goToLink" />
   </header>
 </template>
 
 <script lang="ts" setup>
+const goToLink = () => {
+  window.open('https://t.me/eireen_sid', '_blank')
+}
 </script>
 
 <style lang="scss" scoped>

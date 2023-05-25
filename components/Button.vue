@@ -1,8 +1,6 @@
 <template>
   <div class="btn" v-if="props.name">
-    <button class="btn__content">
-      {{ props.name }}
-    </button>
+    <button class="btn__content" :data="props.name"></button>
   </div>
 </template>
 
@@ -17,12 +15,41 @@ const props = defineProps<Props>()
 .btn {
   &__content {
     padding: 16px 32px;
-    border: 1px solid $black;
-    @include font(16px, 16px, 600, $black);
-    @include link;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, $hover, $yellow);
 
-    &:hover {
-      border: 1px solid $hover;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      right: 1px;
+      top: 1px;
+      bottom: 1px;
+      background-color: $background;
+      z-index: -1;
+      transition: 200ms;
+    }
+
+    &::after {
+      content: attr(data);
+      font-size: 16px;
+      background: linear-gradient(to left, $hover, $yellow);
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: 200ms;
+    }
+
+    &:hover::before {
+      opacity: 0%;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    &:hover::after {
+      color: $white;
     }
   }
 }
