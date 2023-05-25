@@ -7,6 +7,10 @@ html, body, ul, ol {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
@@ -45,6 +49,7 @@ button {
 
 .section {
   margin-bottom: 90px;
+  scroll-margin: 110px;
 }
 
 .title {

@@ -1,31 +1,35 @@
+import { AboutTab } from "~/types/about"
+
 export default defineEventHandler((event) => {
+  const about: AboutTab[] = [
+    {
+      code: 'about',
+      name: "Обо мне / хобби",
+      text: 'Привет, меня зовут Ира Хобби',
+      order: 4
+    },
+    {
+      code: 'education',
+      name: "Образование / обучение",
+      text: '<p class="column-title">Образование</p> <p class="column-text">Высшее (Менеджмент)</p><p class="column-title">Дополнительное образование</p>',
+      order: 3
+    },
+    {
+      code: 'experience',
+      name: "Опыт работы",
+      text: 'Опыт работы',
+      order: 1
+    },
+    {
+      code: 'projects',
+      name: "Дополнительно / проекты",
+      text: '',
+      order: 2
+    }
+  ]
+
   return {
-    about: [
-      {
-        code: 'about',
-        name: "Обо мне / хобби",
-        text: 'Привет, меня зовут Ира Люблю изучать языки Хобби',
-        order: 4
-      },
-      {
-        code: 'education',
-        name: "Образование / обучение",
-        text: '<p class="column-title">Образование</p> <p class="column-text">Высшее (Менеджмент)</p><p class="column-title">Дополнительное образование</p>',
-        order: 3
-      },
-      {
-        code: 'experience',
-        name: "Опыт работы",
-        text: 'Опыт работы',
-        order: 1
-      },
-      {
-        code: 'projects',
-        name: "Дополнительно / проекты",
-        text: '',
-        order: 2
-      }
-    ],
+    about,
     projects: [
       {
         photo: '/img/domenika.png',

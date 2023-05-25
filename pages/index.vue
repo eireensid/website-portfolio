@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="data">
     <AboutSection :about="data.about" />
     <ProjectsSection :projects="data.projects" />
     <TechnologySection :technologies="data.technologies" />
@@ -7,11 +7,11 @@
   </div>
 </template>
 
-<script setup>
-  import AboutSection from "../components/pages/index/AboutSection";
-  import ProjectsSection from "../components/pages/index/ProjectsSection";
-  import TechnologySection from "../components/pages/index/TechnologySection";
-  import ContactSection from "../components/pages/index/ContactSection";
+<script lang="ts" setup>
+  import AboutSection from "../components/pages/index/AboutSection.vue";
+  import ProjectsSection from "../components/pages/index/ProjectsSection.vue";
+  import TechnologySection from "../components/pages/index/TechnologySection.vue";
+  import ContactSection from "../components/pages/index/ContactSection.vue";
 
   const { data } = await useFetch('/api/db')
 

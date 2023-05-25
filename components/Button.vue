@@ -1,6 +1,6 @@
 <template>
-  <div class="btn" v-if="props.name">
-    <button class="btn__content" :data="props.name"></button>
+  <div class="btn" v-if="name">
+    <button class="btn__content" :data="name"></button>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 interface Props {
   name: string
 }
-const props = defineProps<Props>()
+defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>

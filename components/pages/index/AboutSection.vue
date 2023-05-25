@@ -30,27 +30,28 @@
 </template>
 
 <script lang="ts" setup>
-interface Props {
-  about: Array<object>
-}
-const props = defineProps<Props>()
+import { AboutTab, AboutTabOrder } from '~/types/about'
+
+const props = defineProps<{
+  about: AboutTab[]
+}>()
 
 props.about.sort((a, b) => Number(a.order) - Number(b.order))
 
-let curTab = ref(props.about.find((tab) => Number(tab.order) === 1))
+let curTab = ref(props.about.find((tab) => Number(tab.order) === 1)!)
 
-const changeTab = (tab) => {
+const changeTab = (tab: any) => {
   curTab.value = tab
 }
 
-const photoShapes = {
+const photoShapes: Record<AboutTabOrder, string> = {
   1: 'circle',
   2: 'triangle',
   3: 'rhomb',
   4: 'rectangle'
 }
 
-const photoShapeStyle = (order) => {
+const photoShapeStyle = (order: AboutTabOrder) => {
   return photoShapes[order]
 }
 
