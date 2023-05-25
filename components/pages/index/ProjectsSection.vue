@@ -59,11 +59,24 @@ const props = defineProps<Props>()
   &__photo {
     width: 100%;
     height: 340px;
+    position: relative;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: all 5s ease-out 0s;
+    }
+
+    &:hover {
+      img {
+        object-position: center bottom;
+      }
     }
   }
 
@@ -74,9 +87,7 @@ const props = defineProps<Props>()
 
     &:hover {
       ~ .table__row {
-        svg {
-          transform: translate(5px, 5px);
-        }
+        @extend %arrowAnim;
       }
     }
   }
@@ -94,15 +105,31 @@ const props = defineProps<Props>()
     padding-left: 12px;
 
     svg {
-      @include transition;
       fill: $black;
     }
 
     &:hover {
-      svg {
-        transform: translate(5px, 5px);
-      }
+      @extend %arrowAnim;
     }
+  }
+}
+
+%arrowAnim {
+  svg {
+    animation: arrow-hover 1.1s linear infinite;
+    fill: $orange;
+  }
+}
+
+@keyframes arrow-hover {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 </style>
