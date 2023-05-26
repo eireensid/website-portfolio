@@ -15,6 +15,27 @@
 
   const { data } = await useFetch('/api/db')
 
+  const router = useRouter()
+
+  onMounted(() => {
+    const sections = document.querySelectorAll('section')
+    const options = {
+      threshold: 0
+    }
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // console.log(entry.target)
+                const sectionId = entry.target.id
+                router.push({ hash: `#${sectionId}` })
+            }
+        })
+    }, options)
+    sections.forEach(section => {
+        observer.observe(section)
+    })
+  })
+
 </script>
 
 <style scoped>

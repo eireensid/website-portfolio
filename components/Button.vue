@@ -37,6 +37,7 @@ defineProps<Props>()
       font-size: 16px;
       background: $gradient;
       -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
       transition: 200ms;
     }

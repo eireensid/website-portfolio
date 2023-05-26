@@ -10,7 +10,8 @@
         <nav>
           <ul class="burger__list">
             <li class="burger__list-item" v-for="link in menuLinks" :key="link.name">
-              <NuxtLink :to="link.href"
+              <NuxtLink class="burger__list-link" :to="{ path: '/', hash: link.href }"
+                :class="{'burger__list-link--active': activeLinkHash === link.href}"
                 @click="menuIsOpen = false"
               >
                 {{ link.name }}
@@ -25,9 +26,18 @@
 
 <script lang="ts" setup>
 
-import {ref} from "vue";
-
 const menuIsOpen = ref<boolean>(false)
+
+const route = useRoute()
+let activeLinkHash = ref('')
+
+onMounted(() => {
+  activeLinkHash.value = route.hash
+})
+
+watch(() => route.hash, () => {
+  activeLinkHash.value = route.hash
+})
 
 const menuLinks = [
   {
@@ -47,6 +57,8 @@ const menuLinks = [
     "href": "#contacts"
   }
 ]
+
+
 
 </script>
 
@@ -144,10 +156,10 @@ const menuLinks = [
     &-item {
       text-transform: uppercase;
       @include font(24px, 130%, 400, $background);
+    }
 
-      a {
-        @include link($background);
-      }
+    &-link {
+      @include link($background);
     }
   }
 }
