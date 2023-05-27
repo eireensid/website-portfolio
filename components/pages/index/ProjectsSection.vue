@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+    <img src="/img/decor2.svg" alt="" class="section__decor">
   </section>
 </template>
 
@@ -131,5 +132,12 @@ const props = defineProps<Props>()
   100% {
     transform: translate(0, 0);
   }
+}
+
+.section__decor {
+  position: absolute;
+  top: -600px;
+  left: -9.9%;
+  z-index: -1;
 }
 </style>

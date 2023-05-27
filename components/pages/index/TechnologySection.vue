@@ -10,6 +10,7 @@
         <p class="table__text" :class="{'table__text--gradient': tech.gradient}">{{ tech.name }}</p>
       </div>
     </div>
+    <img src="/img/decor1.svg" alt="" class="section__decor">
   </section>
 </template>
 
@@ -48,5 +49,12 @@ const props = defineProps<Props>()
       -webkit-text-fill-color: transparent;
     }
   }
+}
+
+.section__decor {
+  position: absolute;
+  bottom: -600px;
+  right: -9.9%;
+  z-index: -1;
 }
 </style>

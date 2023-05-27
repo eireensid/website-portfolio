@@ -13,5 +13,6 @@
 <style lang="scss">
 .main {
   padding: 110px 8.3% 0;
+  overflow: hidden;
 }
 </style>
