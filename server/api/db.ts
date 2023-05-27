@@ -76,43 +76,52 @@ export default defineEventHandler((event) => {
     ],
     technologies: [
       {
-        name: 'HTML5'
+        name: 'HTML5',
+        gradient: true
       },
       {
-        name: 'CSS3'
+        name: 'CSS3',
+        gradient: false
       },
       {
-        name: 'JavaScript'
+        name: 'JavaScript',
+        gradient: true
       },
       {
-        name: 'Vue'
+        name: 'Vue',
+        gradient: false
       },
       {
-        name: 'React'
+        name: 'React',
+        gradient: false
       },
       {
-        name: 'Nuxt'
+        name: 'Nuxt',
+        gradient: true
       },
       {
-        name: 'Next'
+        name: 'Next',
+        gradient: false
       },
       {
-        name: 'TypeScript'
+        name: 'TypeScript',
+        gradient: true
       },
       {
-        name: 'Pug'
+        name: 'Pug',
+        gradient: true
       },
       {
-        name: 'SASS, SCSS'
+        name: 'SASS, SCSS',
+        gradient: false
       },
       {
-        name: 'Gulp'
+        name: 'Gulp',
+        gradient: true
       },
       {
-        name: 'Firebase'
-      },
-      {
-        name: 'Git'
+        name: 'Git',
+        gradient: false
       }
     ],
     contacts: [

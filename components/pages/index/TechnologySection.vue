@@ -5,9 +5,9 @@
     <div class="table">
       <div class="table__column" v-for="(tech, i) in technologies" :key="tech.name">
         <div class="table__photo">
-          <img :src="iconLink(i + 1)" :alt="tech.name">
+          <img :src="`/img/${tech.name}.svg`" :alt="tech.name">
         </div>
-        <p class="table__text">{{ tech.name }}</p>
+        <p class="table__text" :class="{'table__text--gradient': tech.gradient}">{{ tech.name }}</p>
       </div>
     </div>
   </section>
@@ -18,18 +18,6 @@ interface Props {
   technologies: Array<object>
 }
 const props = defineProps<Props>()
-
-const icons = {
-  1: 'icon1',
-  2: 'icon2',
-  3: 'icon3'
-}
-
-const iconLink = (ind) => {
-  if (ind % 3 === 1) return `/img/${icons[1]}.svg`
-  if (ind % 3 === 2) return `/img/${icons[2]}.svg`
-  if (ind % 3 === 0) return `/img/${icons[3]}.svg`
-}
 
 </script>
 
@@ -47,17 +35,18 @@ const iconLink = (ind) => {
     @include flex(center);
     flex-direction: column;
     padding: 32px;
-
-    //&:nth-child(2n) {
-    //  p {
-    //    color: $black;
-    //  }
-    //}
   }
 
   &__text {
     @include font(24px, 28px, 700);
     padding-top: 12px;
+    
+    &--gradient {
+      background: $gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
 </style>

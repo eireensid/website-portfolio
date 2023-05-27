@@ -60,8 +60,6 @@ const period = new Date(new Date().getTime() - new Date(pastDate).getTime())
 const years = period.getFullYear() - 1970 // at 1970 the date calendar starts
 const months = period.getMonth()
 
-console.log('years: ', years, ', month: ', months)
-
 </script>
 
 <style lang="scss" scoped>
