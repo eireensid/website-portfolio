@@ -1,11 +1,20 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{'header--scroll': isPageTop}">
     <BurgerMenu />
     <Button name="Связаться" @click="goToLink" />
   </header>
 </template>
 
 <script lang="ts" setup>
+let isPageTop = ref(false)
+onMounted(() => {
+  !window.pageYOffset ? isPageTop.value = false : isPageTop.value = true
+  
+  window.addEventListener("scroll", () => {
+    !window.pageYOffset ? isPageTop.value = false : isPageTop.value = true
+  })
+})
+
 const goToLink = () => {
   window.open('https://t.me/eireen_sid', '_blank')
 }
@@ -21,5 +30,10 @@ const goToLink = () => {
   top: 0;
   left: 0;
   @include flex(center, space-between);
+  @include transition;
+  
+  &--scroll {
+    border-bottom: 1px solid $black;
+  }
 }
 </style>

@@ -39,6 +39,28 @@ watch(() => route.hash, () => {
   activeLinkHash.value = route.hash
 })
 
+const router = useRouter()
+
+onMounted(() => {
+  const sections = document.querySelectorAll('section')
+  const options = {
+    threshold: 0.5
+  }
+  const observer = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              // console.log(entry.target)
+              const sectionId = entry.target.id
+              router.push({ hash: `#${sectionId}` })
+          }
+      })
+  }, options)
+  sections.forEach(section => {
+      observer.observe(section)
+  })
+  
+})
+
 const menuLinks = [
   {
     "name": "Обо мне",

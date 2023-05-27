@@ -117,7 +117,7 @@ const props = defineProps<Props>()
 %arrowAnim {
   svg {
     animation: arrow-hover 1.1s linear infinite;
-    fill: $orange;
+    // fill: $orange;
   }
 }
 
