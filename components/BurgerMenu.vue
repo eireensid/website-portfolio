@@ -2,7 +2,7 @@
   <div class="burger" :class="{'burger--open': menuIsOpen}">
     <div class="burger__curtain"></div>
     <div class="burger__content">
-      <div class="burger__icon" @click="menuIsOpen = !menuIsOpen">
+      <div class="burger__icon" @click="toggleMenu">
         <span class="burger__line"></span>
         <span class="burger__line"></span>
       </div>
@@ -26,17 +26,24 @@
 const menuIsOpen = ref<boolean>(false)
 
 const route = useRoute()
-let activeLinkCode: Ref<string | string[]> = ref('')
+const activeLinkCode: Ref<string | string[]> = ref('')
 
 watch(() => route.params.id, () => {
   activeLinkCode.value = route.params.id
 })
 
-const goToBlock = (code: any) => {
+const goToBlock = (code: string) => {
   menuIsOpen.value = false
   activeLinkCode.value = code
   const el = document.querySelector(`[id="${code}"]`)
   el!.scrollIntoView({behavior: 'smooth', inline: 'start', block: 'start'})
+}
+
+const emit = defineEmits(['menuIsOpen'])
+
+const toggleMenu = () => {
+  menuIsOpen.value = !menuIsOpen.value
+  emit('menuIsOpen', menuIsOpen.value)
 }
 
 const menuLinks = [

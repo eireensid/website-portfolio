@@ -1,22 +1,30 @@
 <template>
-  <header class="header" :class="{'header--scroll': isPageTop}">
-    <BurgerMenu />
+  <header class="header" :class="{'header--scroll': !isPageTop && !menuIsOpen}">
+    <BurgerMenu @menuIsOpen="toggleBottomLine" />
     <Button name="Связаться" @click="goToLink" />
   </header>
 </template>
 
 <script lang="ts" setup>
-let isPageTop = ref(false)
+const isPageTop = ref(true)
+const menuIsOpen = ref<boolean>(false)
+
+const calcPageTop = () => {
+  !window.pageYOffset ? isPageTop.value = true : isPageTop.value = false
+}
+
+const toggleBottomLine = (isOpen: any) => {
+  isOpen ? menuIsOpen.value = true : menuIsOpen.value = false
+}
+
 onMounted(() => {
-  !window.pageYOffset ? isPageTop.value = false : isPageTop.value = true
+  calcPageTop()
   
-  window.addEventListener("scroll", () => {
-    !window.pageYOffset ? isPageTop.value = false : isPageTop.value = true
-  })
+  window.addEventListener("scroll", calcPageTop)
 })
 
 onUnmounted(() => {
-  window.removeEventListener("scroll")
+  window.removeEventListener("scroll", calcPageTop)
 })
 
 const goToLink = () => {
