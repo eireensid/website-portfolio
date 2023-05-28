@@ -4,27 +4,34 @@ export default defineEventHandler((event) => {
   const about: AboutTab[] = [
     {
       code: 'about',
-      name: "Обо мне / хобби",
-      text: 'Привет, меня зовут Ира Хобби',
-      order: 4
+      name: "Немного о себе",
+      text: `<p class="column-title">Привет <img style="width:30px;position:relative;top:9px" src="/img/waving.svg" /> меня зовут Ира</p>
+      <p>Увлекаюсь и развиваюсь в сфере веб-разработки</p>
+      <p>Интересные факты</p>`,
+      order: 1
     },
     {
       code: 'education',
-      name: "Образование / обучение",
-      text: '<p class="column-title">Образование</p> <p class="column-text">Высшее (Менеджмент)</p><p class="column-title">Дополнительное образование</p>',
+      name: "Образование",
+      text: `<p class="column-title">Южный федеральный университет, бакалавр</p> 
+      <p>Факультет Управления, специальность “Финансовый менеджмент”</p>
+      <p class="column-title">Южная Школа Программирования, Ростов-на-Дону</p>
+      <p>Очный полугодовой курс “Основы алгоритмизации и программирования (С++)”</p>`,
       order: 3
     },
     {
       code: 'experience',
       name: "Опыт работы",
-      text: 'Опыт работы',
-      order: 1
+      text: `<p class="column-title">Samedia, Frontend Разработчик</p>
+      <p>Разработка адаптивных кроссбраузерных сайтов на Vue.js (лендинги с анимациями, многостраничные сайты, личные кабинеты, админ-панели)</p>
+      <p class="column-title">+ Проектная деятельность</p>`,
+      order: 2
     },
     {
       code: 'projects',
-      name: "Дополнительно / проекты",
-      text: '',
-      order: 2
+      name: "В разработке",
+      text: `<p class="column-title">Ulbi TV Advanced Frontend</p>`,
+      order: 4
     }
   ]
 

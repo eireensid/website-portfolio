@@ -42,6 +42,7 @@
   text-transform: uppercase;
   @include font(48px, 65px, 700, $black);
   margin-bottom: 36px;
+  // font-family: 'Unbounded', sans-serif;
 }
 
 %description {

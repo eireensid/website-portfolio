@@ -19,7 +19,6 @@
         </div>
         <div class="table__content">
           <div class="table__text" v-if="curTab.code === 'experience'">
-            <p class="column-title">Опыт работы</p>
             <p class="column-text">{{ years }} года {{ months }} месяцев </p>
           </div>
           <div class="table__text" v-html="curTab.text"></div>
@@ -70,6 +69,7 @@ const months = period.getMonth()
   &__left {
     flex-basis: 33%;
     border-right: 1px solid $black;
+    flex-shrink: 0;
   }
 
   &__list-item {
@@ -83,7 +83,7 @@ const months = period.getMonth()
   }
 
   &__right {
-    @include flex(flex-start);
+    @include flex;
     padding: 12px 60px;
   }
 
@@ -112,8 +112,11 @@ const months = period.getMonth()
     }
   }
 
-  &__text ::v-deep {
-    @include font(16px, 26px);
+  &__text ::v-deep { 
+    p {
+      @include font(16px, 26px);
+      padding-bottom: 12px;
+    }
 
     .column-title {
       @include font(18px, 26px, 500);
