@@ -15,6 +15,10 @@ onMounted(() => {
   })
 })
 
+onUnmounted(() => {
+  window.removeEventListener("scroll")
+})
+
 const goToLink = () => {
   window.open('https://t.me/eireen_sid', '_blank')
 }

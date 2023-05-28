@@ -9,13 +9,10 @@
       <div class="burger__menu">
         <nav>
           <ul class="burger__list">
-            <li class="burger__list-item" v-for="link in menuLinks" :key="link.name">
-              <NuxtLink class="burger__list-link" :to="{ path: '/', hash: link.href }"
-                :class="{'burger__list-link--active': activeLinkHash === link.href}"
-                @click="menuIsOpen = false"
-              >
-                {{ link.name }}
-              </NuxtLink>
+            <li class="burger__list-item" v-for="link in menuLinks" :key="link.name" 
+              :class="{'burger__list-item--active': activeLinkCode === link.code}" 
+              @click="goToBlock(link.code)">
+              {{ link.name }}
             </li>
           </ul>
         </nav>
@@ -29,54 +26,35 @@
 const menuIsOpen = ref<boolean>(false)
 
 const route = useRoute()
-let activeLinkHash = ref('')
+let activeLinkCode: Ref<string | string[]> = ref('')
 
-onMounted(() => {
-  activeLinkHash.value = route.hash
+watch(() => route.params.id, () => {
+  activeLinkCode.value = route.params.id
 })
 
-watch(() => route.hash, () => {
-  activeLinkHash.value = route.hash
-})
-
-const router = useRouter()
-
-onMounted(() => {
-  const sections = document.querySelectorAll('section')
-  const options = {
-    threshold: 0.5
-  }
-  const observer = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              // console.log(entry.target)
-              const sectionId = entry.target.id
-              router.push({ hash: `#${sectionId}` })
-          }
-      })
-  }, options)
-  sections.forEach(section => {
-      observer.observe(section)
-  })
-  
-})
+const goToBlock = (code: any) => {
+  menuIsOpen.value = false
+  activeLinkCode.value = code
+  const el = document.querySelector(`[id="${code}"]`)
+  el!.scrollIntoView({behavior: 'smooth', inline: 'start', block: 'start'})
+}
 
 const menuLinks = [
   {
     "name": "Обо мне",
-    "href": "#about"
+    "code": "about"
   },
   {
     "name": "Проекты",
-    "href": "#projects"
+    "code": "projects"
   },
   {
     "name": "Технологии",
-    "href": "#technology"
+    "code": "technology"
   },
   {
     "name": "Контакты",
-    "href": "#contacts"
+    "code": "contacts"
   }
 ]
 
@@ -178,9 +156,6 @@ const menuLinks = [
     &-item {
       text-transform: uppercase;
       @include font(24px, 130%, 400, $background);
-    }
-
-    &-link {
       @include link($background);
     }
   }
