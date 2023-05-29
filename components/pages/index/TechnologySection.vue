@@ -15,8 +15,10 @@
 </template>
 
 <script lang="ts" setup>
+import { Technology } from '~/types/technology';
+
 interface Props {
-  technologies: Array<object>
+  technologies: Technology[]
 }
 const props = defineProps<Props>()
 

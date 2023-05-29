@@ -16,12 +16,14 @@
 </template>
 
 <script lang="ts" setup>
+import { Contact } from '~/types/contact';
+
 interface Props {
-  contacts: Array<object>
+  contacts: Contact[]
 }
 const props = defineProps<Props>()
 
-const goToLink = (link) => {
+const goToLink = (link: string) => {
   window.open(link, '_blank')
 }
 

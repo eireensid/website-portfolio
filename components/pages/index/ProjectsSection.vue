@@ -32,8 +32,10 @@
 </template>
 
 <script lang="ts" setup>
+import { Project } from '~/types/projects';
+
 interface Props {
-  projects: Array<object>
+  projects: Project[]
 }
 const props = defineProps<Props>()
 </script>
