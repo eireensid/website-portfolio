@@ -19,7 +19,7 @@
         </div>
         <div class="table__content">
           <div class="table__text" v-if="curTab.code === 'experience'">
-            <p class="column-text">{{ years }} года {{ months }} месяцев </p>
+            <p class="column-bold">{{ years }} года {{ months }} месяцев </p>
           </div>
           <div class="table__text" v-html="curTab.text"></div>
         </div>
@@ -118,12 +118,25 @@ const months = period.getMonth()
       padding-bottom: 12px;
     }
 
+    ul {
+      list-style: none;
+      @include flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    li {
+      background: $gradient;
+      padding: 8px;
+      @include font(16px, 26px, 400, $white);
+    }
+
     .column-title {
       @include font(18px, 26px, 500);
       padding-bottom: 12px;
     }
 
-    .column-text {
+    .column-bold {
       @include font(20px, 26px, 700);
       padding-bottom: 12px;
     }

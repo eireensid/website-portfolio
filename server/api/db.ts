@@ -6,8 +6,13 @@ export default defineEventHandler((event) => {
       code: 'about',
       name: "Немного о себе",
       text: `<p class="column-title">Привет <img style="width:30px;position:relative;top:9px" src="/img/waving.svg" /> меня зовут Ира</p>
-      <p>Увлекаюсь и развиваюсь в сфере веб-разработки</p>
-      <p>Интересные факты</p>`,
+      <p>Нравится учиться и узнавать что-то новое, поэтому я в программировании</p>
+      <ul>
+      <li>Прыгала с парашютом</li>
+      <li>Изучаю французский</li>
+      <li>Была волонтером Олимпийских игр</li>
+      <li>Люблю путешестовать</li>
+      </ul>`,
       order: 1
     },
     {
@@ -30,7 +35,16 @@ export default defineEventHandler((event) => {
     {
       code: 'projects',
       name: "В разработке",
-      text: `<p class="column-title">Ulbi TV Advanced Frontend</p>`,
+      text: `<p>Production проект на React с настройкой всей инфраструктуры <span class="column-title">(Webpack)</span>, тестовой среды, работой с сервером/данными и тд</p>
+      <ul>
+      <li>FSD архитектура</li>
+      <li>СI/CD и pre-commit hooks</li>
+      <li>Unit, React Testing Library, e2e тесты</li>
+      <li>i18n</li>
+      <li>Storybook</li>
+      <li>Redux toolkit</li>
+      <li>RTK query</li>
+      </ul>`,
       order: 4
     }
   ]
