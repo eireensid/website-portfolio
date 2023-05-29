@@ -10,7 +10,7 @@
         <nav>
           <ul class="burger__list">
             <li class="burger__list-item" v-for="link in menuLinks" :key="link.name" 
-              :class="{'burger__list-item--active': activeLinkCode === link.code}" 
+              :class="{'burger__list-item--active': section === link.code}" 
               @click="goToBlock(link.code)">
               {{ link.name }}
             </li>
@@ -22,19 +22,13 @@
 </template>
 
 <script lang="ts" setup>
+import { Menu, SectionCode } from '~/types/menu'
 
 const menuIsOpen = ref<boolean>(false)
 
-const route = useRoute()
-const activeLinkCode: Ref<string | string[]> = ref('')
-
-watch(() => route.params.id, () => {
-  activeLinkCode.value = route.params.id
-})
-
 const goToBlock = (code: string) => {
   menuIsOpen.value = false
-  activeLinkCode.value = code
+  section.value = code as SectionCode
   const el = document.querySelector(`[id="${code}"]`)
   el!.scrollIntoView({behavior: 'smooth', inline: 'start', block: 'start'})
 }
@@ -46,7 +40,7 @@ const toggleMenu = () => {
   emit('menuIsOpen', menuIsOpen.value)
 }
 
-const menuLinks = [
+const menuLinks: Menu[] = [
   {
     "name": "Обо мне",
     "code": "about"

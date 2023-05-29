@@ -12,12 +12,12 @@
   import ProjectsSection from "../components/pages/index/ProjectsSection.vue";
   import TechnologySection from "../components/pages/index/TechnologySection.vue";
   import ContactSection from "../components/pages/index/ContactSection.vue";
+  import { SectionCode } from "~/types/menu";
 
   const { data } = await useFetch('/api/db')
 
   const activeSectionId: Ref<null | string> = ref(null);
   const observer: Ref<IntersectionObserver | null | undefined> = ref(null);
-  const router = useRouter()
 
   onMounted(() => {
     const sections = document.querySelectorAll('.section')
@@ -30,7 +30,7 @@
                 // console.log(entry.target)
                 const id = entry.target.id
                 activeSectionId.value = id
-                router.push({ params: {id: activeSectionId.value} })
+                section.value = id as SectionCode
             }
         })
     }, options)
