@@ -12,7 +12,11 @@
 
 <style lang="scss">
 .main {
-  padding: 110px 8.3% 0;
+  padding: 110px 16px 0;
   overflow: hidden;
+
+  @include breakpoints(medium) {
+    padding: 110px 8.3% 0;
+  }
 }
 </style>

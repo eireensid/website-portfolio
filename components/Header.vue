@@ -34,7 +34,7 @@ const goToLink = () => {
 
 <style lang="scss" scoped>
 .header {
-  padding: 24px 8.3%;
+  padding: 16px;
   background: $background;
   width: 100%;
   position: fixed;
@@ -43,6 +43,10 @@ const goToLink = () => {
   left: 0;
   @include flex(center, space-between);
   @include transition;
+
+  @include breakpoints(medium) {
+    padding: 24px 8.3%;
+  }
   
   &--scroll {
     border-bottom: 1px solid $black;
