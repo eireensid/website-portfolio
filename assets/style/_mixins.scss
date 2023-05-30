@@ -9,6 +9,11 @@
   display: flex;
   align-items: $align;
   justify-content: $justify;
+  flex-direction: column;
+
+  @include breakpoints(medium) {
+    flex-direction: row;
+  }
 }
 
 @mixin font($size, $line, $weight: 400, $color: #212121) {
@@ -59,4 +64,11 @@
 		@include font(24px, 38px);
     margin-bottom: 36px;
 	}
+}
+
+%textGradient {
+  background: $gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

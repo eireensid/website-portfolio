@@ -32,8 +32,7 @@ $breakpoints: (
 
     // If only the min-width value is set:
     @if ($min-width != false) {
-      // Increment min-width value by 1px
-      $min-width: $min-width + 1px;
+      $min-width: $min-width;
       @media screen and (min-width: #{$min-width}) {
         // breakpoint mixin content:
         @content;

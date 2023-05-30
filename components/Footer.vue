@@ -16,10 +16,7 @@
 
   &__text {
     @include font(18px, 24px, 500);
-    background: $gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @extend %textGradient;
   }
 }
 </style>

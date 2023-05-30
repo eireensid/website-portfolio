@@ -12,7 +12,7 @@
           <div class="table__row">
             <p class="table__text">{{ project.text }}</p>
             <NuxtLink :to="project.link" target="_blank" class="table__arrow">
-              <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_12_392)">
                   <path d="M9.5035 22.2741L9.5035 20.6344L19.4748 20.6344L6.84499 8.00456L8.00445 6.8451L20.6343 19.4749L20.6343 9.5036H22.274V22.2741H9.5035Z"/>
                 </g>
@@ -44,13 +44,21 @@ const props = defineProps<Props>()
 .table {
   border: 1px solid $black;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include breakpoints(medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__column {
-    padding: 32px;
+    padding: 16px;
 
-    &:not(:nth-child(3n)) {
-      border-right: 1px solid $black;
+    @include breakpoints(medium) {
+      padding: 32px;
+
+      &:not(:nth-child(3n)) {
+        border-right: 1px solid $black;
+      }
     }
   }
 
@@ -87,6 +95,12 @@ const props = defineProps<Props>()
     margin: 16px 0 12px;
     @include font(24px, 28px, 700);
     @include link;
+    @extend %textGradient;
+
+    @include breakpoints(medium) {
+      -webkit-text-fill-color: $black;
+      background: none;
+    }
 
     &:hover {
       ~ .table__row {
@@ -105,10 +119,24 @@ const props = defineProps<Props>()
   }
 
   &__arrow {
-    padding-left: 12px;
+    align-self: flex-end;
+    padding-top: 16px;
+
+    @include breakpoints(medium) {
+      padding-top: 0;
+      padding-left: 12px;
+      align-self: initial;
+    }
 
     svg {
       fill: $black;
+      width: 40px;
+      height: 40px;
+
+      @include breakpoints(medium) {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     &:hover {

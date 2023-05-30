@@ -27,28 +27,37 @@ const props = defineProps<Props>()
 <style lang="scss" scoped>
 .table {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-left: 1px solid $black;
   border-top: 1px solid $black;
+
+  @include breakpoints(medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   &__column {
     border: 1px solid $black;
     border-left: none;
     border-top: none;
     @include flex(center);
-    flex-direction: column;
-    padding: 32px;
+    padding: 16px;
+
+    @include breakpoints(medium) {
+      padding: 32px;
+      flex-direction: column;
+    }
   }
 
   &__text {
-    @include font(24px, 28px, 700);
+    @include font(22px, 28px, 700);
     padding-top: 12px;
+
+    @include breakpoints(medium) {
+      @include font(24px, 28px, 700);
+    }
     
     &--gradient {
-      background: $gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @extend %textGradient;
     }
   }
 }

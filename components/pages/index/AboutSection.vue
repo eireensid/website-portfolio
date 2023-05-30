@@ -67,31 +67,54 @@ const months = period.getMonth()
   @include flex;
 
   &__left {
-    flex-basis: 33%;
-    border-right: 1px solid $black;
+    width: 100%;
     flex-shrink: 0;
+
+    @include breakpoints(medium) {
+      flex-basis: 33%;
+      border-right: 1px solid $black;
+    }
   }
 
   &__list-item {
     padding: 30px 36px;
-    @include font(18px, 18px, 600, #212121);
+    @include font(22px, 22px, 600);
     @include link;
+    border-bottom: 1px solid $black;
+    text-align: center;
 
-    &:not(:last-child) {
-      border-bottom: 1px solid $black;
+    @include breakpoints(medium) {
+      text-align: left;
+      @include font(18px, 18px);
+      
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 
   &__right {
     @include flex;
-    padding: 12px 60px;
+    padding: 30px 28px;
+    flex-direction: column-reverse;
+
+    @include breakpoints(medium) {
+      padding: 12px 60px;
+    }
   }
 
   &__photo {
-    width: 280px;
-    height: 280px;
-    margin-right: 60px;
+    width: 282px;
+    height: 282px;
     flex-shrink: 0;
+    margin-top: 30px;
+
+    @include breakpoints(medium) {
+      margin-top: 0;
+      margin-right: 60px;
+      width: 280px;
+      height: 280px;
+    }
 
     img {
       width: 100%;
@@ -114,8 +137,12 @@ const months = period.getMonth()
 
   &__text ::v-deep { 
     p {
-      @include font(16px, 26px);
+      @include font(18px, 26px);
       padding-bottom: 12px;
+
+      @include breakpoints(medium) {
+        @include font(16px, 26px);
+      }
     }
 
     ul {
@@ -123,17 +150,32 @@ const months = period.getMonth()
       @include flex;
       flex-wrap: wrap;
       gap: 8px;
+      flex-direction: row;
+      margin-top: 12px;
+
+      @include breakpoints(medium) {
+        margin-top: 0;
+      }
     }
 
     li {
       background: $gradient;
       padding: 8px;
-      @include font(16px, 26px, 400, $white);
+      @include font(14px, 26px, 400, $white);
+      align-self: flex-start;
+
+      @include breakpoints(medium) {
+        @include font(16px, 26px, 400, $white);
+      }
     }
 
     .column-title {
-      @include font(18px, 26px, 500);
+      @include font(20px, 26px, 500);
       padding-bottom: 12px;
+
+      @include breakpoints(medium) {
+        @include font(18px, 26px);
+      }
     }
 
     .column-bold {

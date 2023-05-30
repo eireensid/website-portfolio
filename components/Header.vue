@@ -41,11 +41,12 @@ const goToLink = () => {
   z-index: 3;
   top: 0;
   left: 0;
-  @include flex(center, space-between);
+  @include flex(flex-end, space-between);
   @include transition;
 
   @include breakpoints(medium) {
     padding: 24px 8.3%;
+    @include flex(center, space-between);
   }
   
   &--scroll {

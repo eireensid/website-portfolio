@@ -34,18 +34,31 @@ const goToLink = (link: string) => {
   border: 1px solid $black;
   border-top: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include breakpoints(medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   &__column {
-    padding: 20px 36px;
+    padding: 16px;
     border-top: 1px solid $black;
 
-    &:not(:nth-child(3n)) {
-      border-right: 1px solid $black;
+    @include breakpoints(medium) {
+      padding: 20px 36px;
+
+      &:not(:nth-child(3n)) {
+        border-right: 1px solid $black;
+      }
     }
 
     &:nth-child(4) {
       border-top: none;
+      display: none;
+
+      @include breakpoints(medium) {
+        display: initial;
+      }
     }
   }
 
@@ -56,8 +69,11 @@ const goToLink = (link: string) => {
 
   &__link {
     @include font(20px, 26px, 700);
-    padding: 10px 0 12px;
     @include link;
+
+    @include breakpoints(medium) {
+      padding: 10px 0 12px;
+    }
   }
 }
 </style>

@@ -59,8 +59,6 @@ const menuLinks: Menu[] = [
   }
 ]
 
-
-
 </script>
 
 <style lang="scss">
@@ -76,22 +74,42 @@ const menuLinks: Menu[] = [
     background-image: url("/img/dropdown-menu-curtain.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: wheat;
     @extend %hide;
     transform: translateX(-100%);
     z-index: 2;
+
+    @include breakpoints(medium) {
+      background-color: transparent;
+    }
   }
 
   &__content {
-    display: flex;
-    align-items: center;
+    @include flex;
     position: relative;
-    z-index: 3;
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    width: 0;
+
+    @include breakpoints(medium) {
+      position: static;
+      width: 100%;
+    }
   }
 
   &__icon {
     cursor: pointer;
     width: 72px;
     height: 26px;
+    position: fixed;
+    left: 16px;
+    top: 32px;
+    z-index: 2;
+
+    @include breakpoints(medium) {
+      position: static;
+    }
 
     &:hover {
       .burger__line {
@@ -139,9 +157,15 @@ const menuLinks: Menu[] = [
       transition: all .5s ease-in-out;
     }
 
+    .burger__content {
+      z-index: 3;
+      width: 100%;
+    }
+
     .burger__menu, .burger__curtain {
       @extend %show;
       transform: translateX(0);
+      z-index: 2;
     }
   }
 
@@ -152,7 +176,11 @@ const menuLinks: Menu[] = [
   &__list {
     @include flex;
     gap: 55px;
-    padding: 0 40px;
+    padding: 80px 40px;
+
+    @include breakpoints(medium) {
+      padding: 0 40px;
+    }
 
     &-item {
       text-transform: uppercase;
