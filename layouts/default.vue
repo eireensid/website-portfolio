@@ -16,7 +16,15 @@
   overflow: hidden;
 
   @include breakpoints(medium) {
-    padding: 110px 8.3% 0;
+    padding: 120px 32px 0;
+  }
+
+  @include breakpoints(xlarge) {
+    padding: 120px 8.3% 0;
+  }
+
+  @include breakpoints(xxlarge) {
+    padding: 160px 8.3% 0;
   }
 }
 </style>

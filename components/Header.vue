@@ -45,8 +45,15 @@ const goToLink = () => {
   @include transition;
 
   @include breakpoints(medium) {
-    padding: 24px 8.3%;
+    padding: 24px 32px;
+  }
+
+  @include breakpoints(large) {
     @include flex(center, space-between);
+  }
+
+  @include breakpoints(xlarge) {
+    padding: 24px 8.3%;
   }
   
   &--scroll {

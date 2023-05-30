@@ -11,12 +11,12 @@
           >
             {{ item.name }}
           </li>
-          <li v-if="width < 992" :style="`order: ${curTabOrder}`">
+          <li v-if="width < 1200" :style="`order: ${curTabOrder}`">
             <TabInfo :curTab="curTab" />
           </li>
         </ul>
       </div>
-      <TabInfo :curTab="curTab" v-if="width >= 992" />
+      <TabInfo :curTab="curTab" v-if="width >= 1200" />
     </div>
   </section>
 </template>
@@ -49,7 +49,7 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
   @include flex;
   border-bottom: none;
 
-  @include breakpoints(medium) {
+  @include breakpoints(large) {
     border: 1px solid $black;
   }
 
@@ -57,7 +57,7 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
     width: 100%;
     flex-shrink: 0;
 
-    @include breakpoints(medium) {
+    @include breakpoints(large) {
       flex-basis: 33%;
       border-right: 1px solid $black;
     }
@@ -76,7 +76,7 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
     justify-content: center;
     display: flex;
 
-    @include breakpoints(medium) {
+    @include breakpoints(large) {
       justify-content: flex-start;
       @include font(18px, 18px, 600);
       

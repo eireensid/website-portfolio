@@ -36,6 +36,10 @@ const goToLink = (link: string) => {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
+  @include breakpoints(small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @include breakpoints(medium) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -52,12 +56,38 @@ const goToLink = (link: string) => {
       }
     }
 
+    &:nth-child(2), &:nth-child(5) {
+
+      @include breakpoints(small) {
+        border-right: 1px solid $black;
+      }
+    }
+
+    &:nth-child(1) {
+      order: 1;
+
+      @include breakpoints(medium) {
+        order: initial;
+      }
+    }
+
     &:nth-child(4) {
       border-top: none;
       display: none;
 
       @include breakpoints(medium) {
         display: initial;
+      }
+    }
+
+    &:nth-child(6) {
+
+      @include breakpoints(small) {
+        border-bottom: 1px solid $black;
+      }
+
+      @include breakpoints(medium) {
+        border-bottom: 0;
       }
     }
   }

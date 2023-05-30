@@ -31,6 +31,10 @@ const props = defineProps<Props>()
   border-left: 1px solid $black;
   border-top: 1px solid $black;
 
+  @include breakpoints(small) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @include breakpoints(medium) {
     grid-template-columns: repeat(4, 1fr);
   }

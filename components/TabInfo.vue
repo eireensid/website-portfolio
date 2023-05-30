@@ -46,9 +46,21 @@ const months = period.getMonth()
     flex-direction: column-reverse;
     border-bottom: 1px solid $black;
 
+    @include breakpoints(small) {
+      flex-direction: row;
+    }
+
     @include breakpoints(medium) {
-      padding: 12px 60px;
+      padding: 40px 60px;
+    }
+
+    @include breakpoints(large) {
       border-bottom: 0;
+      padding: 12px 30px;
+    }
+
+    @include breakpoints(xlarge) {
+      padding: 12px 60px;
     }
   }
 
@@ -58,11 +70,23 @@ const months = period.getMonth()
     flex-shrink: 0;
     margin-top: 30px;
 
-    @include breakpoints(medium) {
+    @include breakpoints(small) {
       margin-top: 0;
+      margin-right: 30px;
+    }
+
+    @include breakpoints(medium) {
       margin-right: 60px;
       width: 280px;
       height: 280px;
+    }
+
+    @include breakpoints(large) {
+      margin-right: 30px;
+    }
+
+    @include breakpoints(xlarge) {
+      margin-right: 60px;
     }
 
     img {
@@ -89,7 +113,7 @@ const months = period.getMonth()
       @include font(18px, 26px);
       padding-bottom: 12px;
 
-      @include breakpoints(medium) {
+      @include breakpoints(large) {
         @include font(16px, 26px);
       }
     }
@@ -102,7 +126,7 @@ const months = period.getMonth()
       flex-direction: row;
       margin-top: 12px;
 
-      @include breakpoints(medium) {
+      @include breakpoints(large) {
         margin-top: 0;
       }
     }
@@ -122,7 +146,7 @@ const months = period.getMonth()
       @include font(20px, 26px, 500);
       padding-bottom: 12px;
 
-      @include breakpoints(medium) {
+      @include breakpoints(large) {
         @include font(18px, 26px, 500);
       }
     }

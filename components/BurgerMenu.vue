@@ -179,7 +179,13 @@ const menuLinks: Menu[] = [
     padding: 80px 40px;
 
     @include breakpoints(medium) {
+      padding: 0 30px;
+      gap: 40px;
+    }
+
+    @include breakpoints(large) {
       padding: 0 40px;
+      gap: 55px;
     }
 
     &-item {

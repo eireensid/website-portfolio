@@ -46,14 +46,29 @@ const props = defineProps<Props>()
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  @include breakpoints(medium) {
+  @include breakpoints(small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints(large) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   &__column {
     padding: 16px;
 
-    @include breakpoints(medium) {
+    @include breakpoints(small) {
+     
+      &:not(:nth-child(2n)) {
+        border-right: 1px solid $black;
+
+        @include breakpoints(large) {
+          border: none;
+        }
+      }
+    }
+
+    @include breakpoints(large) {
       padding: 32px;
 
       &:not(:nth-child(3n)) {
