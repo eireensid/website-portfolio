@@ -54,42 +54,42 @@ export default defineEventHandler((event) => {
 
   const projects: Project[] = [
     {
-      photo: '/img/domenika.png',
+      photo: '/img/domenika-min.png',
       name: 'Domenika flowers',
       text: 'Интернет-магазин цветов',
       link: 'http://domenikaflowers.ru',
       order: 1
     },
     {
-      photo: '/img/avtonomera.png',
+      photo: '/img/avtonomera-min.png',
       name: 'Автономера',
       text: 'Конструктор авто- и мотономеров',
       link: 'http://avtonomera.d-22.ru',
       order: 2
     },
     {
-      photo: '/img/teremok.png',
+      photo: '/img/teremok-min.png',
       name: 'Приют Теремок',
       text: 'База данных животных, ищущих дом',
       link: 'https://teremok-priut.ru',
       order: 3
     },
     {
-      photo: '/img/bigfish.png',
+      photo: '/img/bigfish-min.png',
       name: 'Большая рыба',
       text: 'Заказать столик в баре',
       link: 'http://bigfish.d-22.ru',
       order: 4
     },
     {
-      photo: '/img/aston.png',
+      photo: '/img/aston-min.png',
       name: 'Астон',
       text: 'Производство продуктов питания',
       link: 'https://www.aston.ru',
       order: 5
     },
     {
-      photo: '/img/semifur.png',
+      photo: '/img/semifur-min.png',
       name: 'Semifur',
       text: 'Интернет-магазин головных уборов',
       link: 'https://semifur.ru/',
