@@ -11,12 +11,12 @@
           >
             {{ item.name }}
           </li>
-          <li v-if="width < 1200" :style="`order: ${curTabOrder}`">
-            <TabInfo :curTab="curTab" />
+          <li :style="`order: ${curTabOrder}`" class="table__tab-info--mobile">
+            <TabInfo :curTab="curTab"/>
           </li>
         </ul>
       </div>
-      <TabInfo :curTab="curTab" v-if="width >= 1200" />
+      <TabInfo :curTab="curTab" class="table__tab-info--desktop" />
     </div>
   </section>
 </template>
@@ -31,8 +31,6 @@ const props = defineProps<{
 props.about.sort((a, b) => Number(a.order) - Number(b.order))
 
 let curTab = ref<AboutTab>(props.about.find((tab) => Number(tab.order) === 1)!)
-
-const { width } = useWindowSizes()
 
 let curTabOrder = ref<AboutTabOrder>(1)
 
@@ -80,8 +78,26 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
       justify-content: flex-start;
       @include font(18px, 18px, 600);
       
-      &:last-child {
+      &:nth-last-child(2) {
         border-bottom: none;
+      }
+    }
+  }
+
+  &__tab-info {
+
+    &--mobile {
+
+      @include breakpoints(large) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include breakpoints(large) {
+        display: flex;
       }
     }
   }
