@@ -32,13 +32,20 @@ const props = defineProps<{
 
 props.about.sort((a, b) => Number(a.order) - Number(b.order))
 
-let curTab = ref<AboutTab>(props.about.find((tab) => Number(tab.order) === 1)!)
+const curTab = ref<AboutTab>(props.about.find((tab) => Number(tab.order) === 1)!)
 
-let curTabOrder = ref<AboutTabOrder>(1)
+const curTabOrder = ref<AboutTabOrder>(1)
+
+const { width } = useWindowSizes()
 
 const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
   curTab.value = tab
   curTabOrder.value = order
+
+  if (width.value < 1200 && order !== 1) {
+    const el = document.querySelector('.table__tab-info--mobile')
+    el!.scrollIntoView({behavior: 'smooth', block: 'center'})
+  }
 }
 
 </script>
