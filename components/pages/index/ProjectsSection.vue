@@ -6,7 +6,7 @@
       <div class="table__column" v-for="project in projects" :key="project.name">
         <div class="table__content">
           <div class="table__photo">
-            <img :src="project.photo" :alt="project.name">
+            <img :src="project.photo" :alt="project.name" loading="lazy">
           </div>
           <NuxtLink :to="project.link" target="_blank" class="table__title">{{ project.name }}</NuxtLink>
           <div class="table__row">

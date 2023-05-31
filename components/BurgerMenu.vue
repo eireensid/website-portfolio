@@ -106,6 +106,7 @@ const menuLinks: Menu[] = [
     left: 16px;
     top: 32px;
     z-index: 2;
+    @include transition;
 
     @include breakpoints(medium) {
       position: static;
@@ -132,6 +133,12 @@ const menuLinks: Menu[] = [
 
   &--open {
     .burger__icon {
+      left: 32px;
+
+      @include breakpoints(large) {
+        left: 16px;
+      }
+
       &:hover {
         .burger__line {
           background: $black;
@@ -144,12 +151,20 @@ const menuLinks: Menu[] = [
       width: 34px;
 
       &:first-child {
-        transform: translate(50%, 11px) rotate(45deg);
+        transform: translate(0, 11px) rotate(45deg);
+
+        @include breakpoints(large) {
+          transform: translate(50%, 11px) rotate(45deg);
+        }
 
       }
 
       &:last-child {
-        transform: translate(50%, 0) rotate(135deg);
+        transform: rotate(135deg);
+
+        @include breakpoints(large) {
+          transform: translate(50%, 0) rotate(135deg);
+        }
       }
     }
 

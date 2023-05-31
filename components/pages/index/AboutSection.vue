@@ -16,7 +16,9 @@
           </li>
         </ul>
       </div>
-      <TabInfo :curTab="curTab" class="table__tab-info--desktop" />
+      <div class="table__tab-info--desktop">
+        <TabInfo :curTab="curTab" />
+      </div>
     </div>
   </section>
 </template>
@@ -97,7 +99,7 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
       display: none;
 
       @include breakpoints(large) {
-        display: flex;
+        display: block;
       }
     }
   }
