@@ -1,7 +1,10 @@
 <template>
   <header class="header" :class="{'header--scroll': !isPageTop && !menuIsOpen}">
     <BurgerMenu @menuIsOpen="toggleBottomLine" />
-    <Button name="Связаться" @click="goToLink" />
+    <div class="header__right">
+      <LanguageSwitcher />
+      <Button name="Связаться" @click="goToLink" />
+    </div>
   </header>
 </template>
 

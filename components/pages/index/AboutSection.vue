@@ -1,6 +1,7 @@
 <template>
   <section class="section" id="about">
     <h2 class="title">Хочу создавать красоту, а не только ею восхищаться.</h2>
+    <div>{{ $t('welcome') }}</div>
     <p class="description">Давайте познакомимся поближе</p>
     <div class="table">
       <div class="table__left">
@@ -47,6 +48,8 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
     el!.scrollIntoView({behavior: 'smooth', block: 'center'})
   }
 }
+
+const { locale } = useI18n()
 
 </script>
 
