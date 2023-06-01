@@ -1,10 +1,7 @@
 <template>
   <header class="header" :class="{'header--scroll': !isPageTop && !menuIsOpen}">
     <BurgerMenu @menuIsOpen="toggleBottomLine" />
-    <div class="header__right">
-      <LanguageSwitcher />
-      <Button name="Связаться" @click="goToLink" />
-    </div>
+    <LanguageSwitcher />
   </header>
 </template>
 
@@ -30,9 +27,6 @@ onUnmounted(() => {
   window.removeEventListener("scroll", calcPageTop)
 })
 
-const goToLink = () => {
-  window.open('https://t.me/eireen_sid', '_blank')
-}
 </script>
 
 <style lang="scss" scoped>
