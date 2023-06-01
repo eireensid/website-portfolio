@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="contacts">
-    <h2 class="title">Мои контакты</h2>
-    <p class="description">Буду рада с вами пообщаться</p>
+    <h2 class="title">{{ $t('contactsTitle') }}</h2>
+    <p class="description">{{ $t('contactsDescription') }}</p>
     <div class="table">
       <div class="table__column" v-for="cont in contacts" :key="cont.name">
         <p class="table__text">{{ cont.name }}</p>

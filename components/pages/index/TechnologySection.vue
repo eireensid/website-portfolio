@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="technology">
-    <h2 class="title">Технологии</h2>
-    <p class="description">Которые я использовала в своих проектах</p>
+    <h2 class="title">{{ $t('technologyTitle') }}</h2>
+    <p class="description">{{ $t('technologyDescription') }}</p>
     <div class="table">
       <div class="table__column" v-for="(tech, i) in technologies" :key="tech.name">
         <div class="table__photo">

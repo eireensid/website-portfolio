@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="about">
-    <h2 class="title">Хочу создавать красоту, а не только ею восхищаться.</h2>
-    <p class="description">Давайте познакомимся поближе</p>
+    <h2 class="title">{{ $t('aboutTitle') }}</h2>
+    <p class="description">{{ $t('aboutDescription') }}</p>
     <div class="table">
       <div class="table__left">
         <ul class="table__list">

@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="projects">
-    <h2 class="title">Проекты</h2>
-    <p class="description">Мой опыт создания верстки и реализации функционала</p>
+    <h2 class="title">{{ $t('projectsTitle') }}</h2>
+    <p class="description">{{ $t('projectsDescription') }}</p>
     <div class="table">
       <div class="table__column" v-for="project in projects" :key="project.name">
         <div class="table__content">

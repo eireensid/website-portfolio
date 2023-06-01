@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <p class="footer__text">Разработано на Nuxt.js, 2023 год</p>
+    <p class="footer__text">{{ $t('footer') }}</p>
   </footer>
 </template>
 
