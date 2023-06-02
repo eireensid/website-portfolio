@@ -3,6 +3,8 @@ export default {
   aboutDescription: 'Давайте познакомимся поближе',  
   projectsTitle: 'ПРОЕКТЫ',
   projectsDescription: 'Мой опыт создания верстки и реализации функционала',  
+  years: 'года',
+  months: 'месяцев',
   technologyTitle: 'ТЕХНОЛОГИИ',
   technologyDescription: 'Которые я использовала в своих проектах',  
   contactsTitle: 'МОИ КОНТАКТЫ',

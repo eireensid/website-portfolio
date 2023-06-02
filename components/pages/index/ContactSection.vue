@@ -3,12 +3,15 @@
     <h2 class="title">{{ $t('contactsTitle') }}</h2>
     <p class="description">{{ $t('contactsDescription') }}</p>
     <div class="table">
-      <div class="table__column" v-for="cont in contacts" :key="cont.name">
-        <p class="table__text">{{ cont.name }}</p>
+      <div class="table__column" v-for="(cont, i) in contacts" :key="cont.name">
+        <p class="table__text">{{ i === 0 ? defineObjFields(cont, ['name', 'en-name', 'fr-name']) : cont.name }}</p>
         <NuxtLink v-if="cont.link" class="table__link" :to="cont.link.href" target="_blank">
           {{ cont.link.name }}
         </NuxtLink>
-        <Button v-if="cont.btn" :name="cont.btn.name" @click="goToLink(cont.btn.href)"/>
+        <Button v-if="cont.btn" 
+          :name="i === 0 ? defineObjFields(cont.btn, ['name', 'en-name', 'fr-name']) : cont.btn.name" 
+          @click="goToLink(cont.btn.href)"
+        />
       </div>
     </div>
 

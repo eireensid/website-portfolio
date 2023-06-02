@@ -8,9 +8,9 @@
           <div class="table__photo">
             <img :src="project.photo" :alt="project.name" loading="lazy">
           </div>
-          <NuxtLink :to="project.link" target="_blank" class="table__title">{{ project.name }}</NuxtLink>
+          <NuxtLink :to="project.link" target="_blank" class="table__title">{{ defineObjFields(project, ['name', 'en-name', 'fr-name']) }}</NuxtLink>
           <div class="table__row">
-            <p class="table__text">{{ project.text }}</p>
+            <p class="table__text">{{ defineObjFields(project, ['text', 'en-text', 'fr-text']) }}</p>
             <NuxtLink :to="project.link" target="_blank" class="table__arrow">
               <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_12_392)">

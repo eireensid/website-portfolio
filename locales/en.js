@@ -3,6 +3,8 @@ export default {
   aboutDescription: 'A little bit info about me',
   projectsTitle: 'Projects',
   projectsDescription: 'My experience in creating websites and implementing functionality',  
+  years: 'years',
+  months: 'months',
   technologyTitle: 'Tech stack',
   technologyDescription: 'Which I used in my projects',  
   contactsTitle: 'Contact info',

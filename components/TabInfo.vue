@@ -5,9 +5,9 @@
       </div>
       <div class="table__content">
         <div class="table__text" v-if="curTab.code === 'experience'">
-          <p class="column-bold">{{ years }} года {{ months }} месяцев </p>
+          <p class="column-bold">{{ `${years}  ${$t('years')}  ${months} ${$t('months')}` }}</p>
         </div>
-        <div class="table__text" v-html="curTab.text"></div>
+        <div class="table__text" v-html="defineObjFields(curTab, ['text', 'en-text', 'fr-text'])"></div>
       </div>
     </div>
 </template>

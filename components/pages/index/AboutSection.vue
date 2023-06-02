@@ -1,6 +1,6 @@
 <template>
   <section class="section" id="about">
-    <h2 class="title">{{ $t('aboutTitle') }}</h2>
+    <h2 class="title" :class="{'title--width': locale === 'fr'}">{{ $t('aboutTitle') }}</h2>
     <p class="description">{{ $t('aboutDescription') }}</p>
     <div class="table">
       <div class="table__left">
@@ -9,7 +9,7 @@
               :class="{'table__list-item--active': item === curTab}"
               @mouseover="changeTab(item, (i + 1) as AboutTabOrder)"
           >
-            {{ item.name }}
+            {{ defineObjFields(item, ['name', 'en-name', 'fr-name']) }}
           </li>
           <li :style="`order: ${curTabOrder}`" class="table__tab-info--mobile">
             <TabInfo :curTab="curTab"/>
@@ -47,6 +47,8 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
     el!.scrollIntoView({behavior: 'smooth', block: 'center'})
   }
 }
+
+const { locale } = useI18n()
 
 </script>
 
@@ -111,4 +113,11 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
     }
   }
 }
+
+.title {
+  &--width {
+    max-width: 600px;
+  }
+}
+
 </style>

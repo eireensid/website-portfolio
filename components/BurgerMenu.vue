@@ -12,7 +12,7 @@
             <li class="burger__list-item" v-for="link in menuLinks" :key="link.name" 
               :class="{'burger__list-item--active': section === link.code}" 
               @click="goToBlock(link.code)">
-              {{ link.name }}
+              {{ defineObjFields(link, ['name', 'en-name', 'fr-name']) }}
             </li>
           </ul>
         </nav>
@@ -43,18 +43,26 @@ const toggleMenu = () => {
 const menuLinks: Menu[] = [
   {
     "name": "Обо мне",
+    "en-name": "About me",
+    "fr-name": "Moi",
     "code": "about"
   },
   {
     "name": "Проекты",
+    "en-name": "Projects",
+    "fr-name": "Projets",
     "code": "projects"
   },
   {
     "name": "Технологии",
+    "en-name": "Stack",
+    "fr-name": "Stack",
     "code": "technology"
   },
   {
     "name": "Контакты",
+    "en-name": "Contacts",
+    "fr-name": "Contacts",
     "code": "contacts"
   }
 ]
