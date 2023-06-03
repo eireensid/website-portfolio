@@ -1,6 +1,4 @@
 export default {
-  aboutTitle: 'Je veux créer, pas juste admirer.',
-  aboutDescription: 'Un peu d\'information sur moi',
   projectsTitle: 'Projets',
   projectsDescription: 'Mon expérience dans la création de sites et dans la réalisation de fonctionnalités',  
   years: 'ans',

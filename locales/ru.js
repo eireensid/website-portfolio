@@ -1,6 +1,4 @@
 export default {
-  aboutTitle: 'ХОЧУ СОЗДАВАТЬ КРАСОТУ, А НЕ ТОЛЬКО ЕЮ ВОСХИЩАТЬСЯ.',
-  aboutDescription: 'Давайте познакомимся поближе',  
   projectsTitle: 'ПРОЕКТЫ',
   projectsDescription: 'Мой опыт создания верстки и реализации функционала',  
   years: 'года',

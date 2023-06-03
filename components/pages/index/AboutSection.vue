@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="about">
-    <h2 v-show="locale" class="title" :class="{'title--width': locale === 'fr'}">{{ t('aboutTitle') }}</h2>
-    <p v-show="locale" class="description">{{ t('aboutDescription') }}</p>
+    <h2 class="title" :class="{'title--width': locale === 'fr'}">{{ t('aboutTitle') }}</h2>
+    <p class="description">{{ t('aboutDescription') }}</p>
     <div class="table">
       <div class="table__left">
         <ul class="table__list">
@@ -22,6 +22,23 @@
     </div>
   </section>
 </template>
+
+<i18n lang="json">
+  {
+    "ru": {
+      "aboutTitle": "ХОЧУ СОЗДАВАТЬ КРАСОТУ, А НЕ ТОЛЬКО ЕЮ ВОСХИЩАТЬСЯ.",
+      "aboutDescription": "Давайте познакомимся поближе" 
+    },
+    "en": {
+      "aboutTitle": "I want to create and not just admire.",
+      "aboutDescription": "A little bit info about me" 
+    },
+    "fr": {
+      "aboutTitle": "Je veux créer, pas juste admirer.",
+      "aboutDescription": "Un peu d'information sur moi" 
+    }
+  }
+  </i18n>
 
 <script lang="ts" setup>
 import { AboutTab, AboutTabOrder } from '~/types/about'
@@ -48,7 +65,9 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
   }
 }
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({
+    useScope: 'local'
+})
 
 </script>
 
