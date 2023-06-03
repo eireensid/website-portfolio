@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="about">
-    <h2 class="title" :class="{'title--width': locale === 'fr'}">{{ $t('aboutTitle') }}</h2>
-    <p class="description">{{ $t('aboutDescription') }}</p>
+    <h2 v-show="locale" class="title" :class="{'title--width': locale === 'fr'}">{{ t('aboutTitle') }}</h2>
+    <p v-show="locale" class="description">{{ t('aboutDescription') }}</p>
     <div class="table">
       <div class="table__left">
         <ul class="table__list">
@@ -48,7 +48,7 @@ const changeTab = (tab: AboutTab, order: AboutTabOrder) => {
   }
 }
 
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 </script>
 
