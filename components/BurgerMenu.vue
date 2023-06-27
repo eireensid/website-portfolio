@@ -41,12 +41,12 @@ const toggleMenu = () => {
 }
 
 const menuLinks: Menu[] = [
-  {
-    "name": "Обо мне",
-    "en-name": "About me",
-    "fr-name": "Moi",
-    "code": "about"
-  },
+  // {
+  //   "name": "Обо мне",
+  //   "en-name": "About me",
+  //   "fr-name": "Moi",
+  //   "code": "about"
+  // },
   {
     "name": "Проекты",
     "en-name": "Projects",

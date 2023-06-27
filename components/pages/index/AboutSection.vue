@@ -1,5 +1,5 @@
 <template>
-  <section class="section" id="about">
+  <section class="section section--about" id="about">
     <h2 class="title" :class="{'title--width': locale === 'fr'}">{{ t('aboutTitle') }}</h2>
     <p class="description">{{ t('aboutDescription') }}</p>
     <div class="table">
@@ -136,6 +136,12 @@ const { t, locale } = useI18n({
 .title {
   &--width {
     max-width: 600px;
+  }
+}
+
+.section {
+  &--about {
+    display: none;
   }
 }
 

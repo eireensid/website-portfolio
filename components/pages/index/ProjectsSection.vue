@@ -181,7 +181,7 @@ const props = defineProps<Props>()
 
 .section__decor {
   position: absolute;
-  top: -600px;
+  top: 0;
   left: -9.9%;
   z-index: -1;
 }
