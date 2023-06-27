@@ -8,10 +8,13 @@
         <NuxtLink v-if="cont.link" class="table__link" :to="cont.link.href" target="_blank">
           {{ cont.link.name }}
         </NuxtLink>
-        <Button v-if="cont.btn" 
-          :name="i === 0 ? defineObjFields(cont.btn, ['name', 'en-name', 'fr-name']) : cont.btn.name" 
-          @click="goToLink(cont.btn.href)"
+        <Button v-if="cont.btn"
+                :name="i === 0 ? defineObjFields(cont.btn, ['name', 'en-name', 'fr-name']) : cont.btn.name"
+                @click="goToLink(cont.btn.href)"
         />
+        <div class="table__photo" v-if="i === 0">
+          <img src="/img/photo.jpg" alt="фото" loading="lazy">
+        </div>
       </div>
     </div>
 
@@ -50,6 +53,7 @@ const goToLink = (link: string) => {
   &__column {
     padding: 16px;
     border-top: 1px solid $black;
+    position: relative;
 
     @include breakpoints(medium) {
       padding: 20px 36px;
@@ -72,6 +76,13 @@ const goToLink = (link: string) => {
       @include breakpoints(medium) {
         order: initial;
       }
+
+      @include breakpoints(large) {
+        .table__text, .btn {
+          position: relative;
+          top: 24px;
+        }
+      }
     }
 
     &:nth-child(4) {
@@ -92,6 +103,26 @@ const goToLink = (link: string) => {
       @include breakpoints(medium) {
         border-bottom: 0;
       }
+    }
+  }
+
+  &__photo {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    right: 32px;
+    top: 40px;
+    display: none;
+
+    @include breakpoints(large) {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
   }
 
