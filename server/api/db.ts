@@ -120,6 +120,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Online flower shop',
       'fr-text': 'Boutique de fleurs en ligne',
       link: 'http://domenikaflowers.ru',
+      labels: ['Vue', 'Pug', 'Stylus'],
       order: 1
     },
     {
@@ -131,6 +132,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Constructor of auto numbers and moto numbers',
       'fr-text': 'Constructeur de numéros auto et numéros moto',
       link: 'http://avtonomera.d-22.ru',
+      labels: ['Vue', 'Vuex', 'Pug', 'Stylus'],
       order: 2
     },
     {
@@ -142,6 +144,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Database of animals looking for a home',
       'fr-text': 'Base de données des animaux à la recherche d\'une maison',
       link: 'https://teremok-priut.ru',
+      labels: ['Next', 'React', 'CSS modules'],
       order: 3
     },
     {
@@ -153,6 +156,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Book a table at the bar',
       'fr-text': 'Réserver une table au bar',
       link: 'http://bigfish.d-22.ru',
+      labels: ['Vue', 'Pug', 'Stylus'],
       order: 4
     },
     {
@@ -164,6 +168,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Food production',
       'fr-text': 'Production alimentaire',
       link: 'https://www.aston.ru',
+      labels: ['Gulp', 'Pug', 'Sass'],
       order: 5
     },
     {
@@ -175,6 +180,7 @@ export default defineEventHandler((event) => {
       'en-text': 'Online store of hats',
       'fr-text': 'Boutique en ligne de chapeaux',
       link: 'https://semifur.ru/',
+      labels: ['Vue', 'Pug', 'Stylus'],
       order: 6
     }
   ]

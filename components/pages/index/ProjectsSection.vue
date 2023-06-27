@@ -5,6 +5,9 @@
     <div class="table">
       <div class="table__column" v-for="project in projects" :key="project.name">
         <div class="table__content">
+          <ul class="table__labels">
+            <li v-for="(label, i) in project.labels" :key="i">{{ label }}</li>
+          </ul>
           <div class="table__photo">
             <img :src="project.photo" :alt="project.name" loading="lazy">
           </div>
@@ -80,6 +83,7 @@ const props = defineProps<Props>()
   &__content {
     border-bottom: 1px solid $black;
     height: 100%;
+    position: relative;
   }
 
   &__photo {
@@ -156,6 +160,31 @@ const props = defineProps<Props>()
 
     &:hover {
       @extend %arrowAnim;
+    }
+  }
+
+  &__labels {
+    list-style: none;
+    @include flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    max-width: 200px;
+    cursor: default;
+
+    li {
+      background: $gradient;
+      padding: 8px;
+      @include font(14px, 26px, 400, $white);
+
+      @include breakpoints(medium) {
+        @include font(16px, 26px, 400, $white);
+      }
     }
   }
 }
