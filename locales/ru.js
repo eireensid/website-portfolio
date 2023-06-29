@@ -1,6 +1,4 @@
 export default {
-  projectsTitle: 'МОИ ПРОЕКТЫ',
-  projectsDescription: 'Мой опыт создания верстки и реализации функционала',  
   years: 'года',
   months: 'месяцев',
   technologyTitle: 'ТЕХНОЛОГИИ',

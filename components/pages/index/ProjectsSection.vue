@@ -1,7 +1,7 @@
 <template>
   <section class="section" id="projects">
-    <h2 class="title">{{ $t('projectsTitle') }}</h2>
-    <p class="description">{{ $t('projectsDescription') }}</p>
+    <h2 class="title">{{ t('projectsTitle') }}</h2>
+    <p class="description">{{ t('projectsDescription') }}</p>
     <div class="table">
       <div class="table__column" v-for="project in projects" :key="project.name">
         <div class="table__content">
@@ -34,6 +34,23 @@
   </section>
 </template>
 
+<i18n lang="json">
+  {
+    "ru": {
+      "projectsTitle": "МОИ ПРОЕКТЫ",
+      "projectsDescription": "Мой опыт создания верстки и реализации функционала"
+    },
+    "en": {
+      "projectsTitle": "Projects",
+      "projectsDescription": "My experience in creating websites and implementing functionality"
+    },
+    "fr": {
+      "projectsTitle": "Projets",
+      "projectsDescription": "Mon expérience dans la création de sites et dans la réalisation de fonctionnalités"
+    }
+  }
+</i18n>
+
 <script lang="ts" setup>
 import { Project } from '~/types/projects';
 
@@ -41,6 +58,10 @@ interface Props {
   projects: Project[]
 }
 const props = defineProps<Props>()
+
+const { t } = useI18n({
+  useScope: 'local'
+})
 </script>
 
 <style lang="scss" scoped>
