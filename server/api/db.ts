@@ -242,10 +242,10 @@ export default defineEventHandler((event) => {
       'en-name': 'Resume',
       'fr-name': 'Résumé',
       btn: {
-        name: 'Скачать',
-        'en-name': 'Download',
-        'fr-name': 'Télécharger',
-        href: 'https://docs.google.com/document/d/1C1hiBV71hpbMLT83pfPZQDImgIy3UET46HqCGzhzCmg'
+        name: 'Открыть',
+        'en-name': 'Open',
+        'fr-name': 'Ouvrir',
+        href: 'https://myresume.ru/resume/8z5PrOuAES9/'
       }
     },
     {
