@@ -251,8 +251,8 @@ export default defineEventHandler((event) => {
     {
       name: 'Telegram',
       link: {
-        name: '@eireen_sid',
-        href: 'https://t.me/eireen_sid'
+        name: '@sirenesereine',
+        href: 'https://t.me/sirenesereine'
       }
     },
     {
