@@ -5,5 +5,5 @@ export default {
   technologyDescription: 'Que j\'ai utilisé dans mes projets',  
   contactsTitle: 'Mes contacts',
   contactsDescription: 'Je serais ravie de vous rencontrer',  
-  footer: 'Développé sur Nuxt.js, 2023'  
+  footer: 'Développé sur Nuxt.js, 2025'  
 }

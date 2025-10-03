@@ -112,25 +112,25 @@ export default defineEventHandler((event) => {
 
   const projects: Project[] = [
     {
-      photo: '/img/domenika-min.png',
-      name: 'Domenika flowers',
-      'en-name': 'Domenika flowers',
-      'fr-name': 'Fleurs de Domenica',
-      text: 'Интернет-магазин цветов',
-      'en-text': 'Online flower shop',
-      'fr-text': 'Boutique de fleurs en ligne',
-      link: 'http://domenikaflowers.ru',
-      labels: ['Vue', 'Pug', 'Stylus'],
+      photo: '/img/lemonpie-min.png',
+      name: 'Lemon Pie',
+      'en-name': 'Lemon Pie',
+      'fr-name': 'Lemon Pie',
+      text: 'Управленческий учет для НКО',
+      'en-text': 'Management accounting for non-profit organizations',
+      'fr-text': 'Contrôle de gestion pour les association à but non lucratif',
+      link: 'https://app.lemonpie.tech',
+      labels: ['Nuxt', 'Vue', 'Scss'],
       order: 1
     },
     {
       photo: '/img/avtonomera-min.png',
-      name: 'Автономера',
+      name: 'Автономера1',
       'en-name': 'Auto numbers',
       'fr-name': 'Numéros auto',
       text: 'Конструктор авто- и мотономеров',
-      'en-text': 'Constructor of auto numbers and moto numbers',
-      'fr-text': 'Constructeur de numéros auto et numéros moto',
+      'en-text': 'Constructor of car and bike number',
+      'fr-text': 'Constructeur de numéro de voiture et de moto',
       link: 'http://avtonomera.d-22.ru',
       labels: ['Vue', 'Vuex', 'Pug', 'Stylus'],
       order: 2
@@ -143,7 +143,7 @@ export default defineEventHandler((event) => {
       text: 'База данных животных, ищущих дом',
       'en-text': 'Database of animals looking for a home',
       'fr-text': 'Base de données des animaux à la recherche d\'une maison',
-      link: 'https://teremok-priut.ru',
+      link: 'https://animal-shelter-git-main-eireensid.vercel.app',
       labels: ['Next', 'React', 'CSS modules'],
       order: 3
     },
@@ -177,8 +177,8 @@ export default defineEventHandler((event) => {
       'en-name': 'Semifur',
       'fr-name': 'Semifur',
       text: 'Интернет-магазин головных уборов',
-      'en-text': 'Online store of hats',
-      'fr-text': 'Boutique en ligne de chapeaux',
+      'en-text': 'Online hats store',
+      'fr-text': 'Boutique de chapeaux en ligne',
       link: 'https://semifur.ru/',
       labels: ['Vue', 'Pug', 'Stylus'],
       order: 6
@@ -239,8 +239,8 @@ export default defineEventHandler((event) => {
   const contacts: Contact[] = [
     {
       name: 'Резюме',
-      'en-name': 'Resume',
-      'fr-name': 'Résumé',
+      'en-name': 'CV',
+      'fr-name': 'CV',
       btn: {
         name: 'Открыть',
         'en-name': 'Open',

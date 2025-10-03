@@ -38,15 +38,15 @@
   {
     "ru": {
       "projectsTitle": "МОИ ПРОЕКТЫ",
-      "projectsDescription": "Мой опыт создания верстки и реализации функционала"
+      "projectsDescription": "Мой опыт реализации функционала и создания верстки"
     },
     "en": {
       "projectsTitle": "Projects",
-      "projectsDescription": "My experience in creating websites and implementing functionality"
+      "projectsDescription": "My experience in developing apps and websites"
     },
     "fr": {
       "projectsTitle": "Projets",
-      "projectsDescription": "Mon expérience dans la création de sites et dans la réalisation de fonctionnalités"
+      "projectsDescription": "Mon expérience dans le développement de la fonctionnalité et la création des sites"
     }
   }
 </i18n>

@@ -4,6 +4,6 @@ export default {
   technologyTitle: 'ТЕХНОЛОГИИ',
   technologyDescription: 'Которые я использовала в своих проектах',  
   contactsTitle: 'КОНТАКТЫ',
-  contactsDescription: 'Буду рада с вами пообщаться',  
-  footer: 'Разработано на Nuxt.js, 2023'
+  contactsDescription: 'Буду рада пообщаться с вами',  
+  footer: 'Разработано на Nuxt.js, 2025'
 }

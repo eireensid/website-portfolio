@@ -7,5 +7,6 @@ export type Project = {
     'en-text': string,
     'fr-text': string,
     link: string,
-    order: number
+    order: number,
+    labels: string[]
 }
