@@ -113,9 +113,9 @@ export default defineEventHandler((event) => {
   const projects: Project[] = [
     {
       photo: '/img/lemonpie-min.png',
-      name: 'Lemon Pie',
-      'en-name': 'Lemon Pie',
-      'fr-name': 'Lemon Pie',
+      name: 'ЛемонПай',
+      'en-name': 'LemonPie',
+      'fr-name': 'LemonPie',
       text: 'Управленческий учет для НКО',
       'en-text': 'Management accounting for non-profit organizations',
       'fr-text': 'Contrôle de gestion pour les association à but non lucratif',
@@ -125,7 +125,7 @@ export default defineEventHandler((event) => {
     },
     {
       photo: '/img/avtonomera-min.png',
-      name: 'Автономера1',
+      name: 'Автономера',
       'en-name': 'Auto numbers',
       'fr-name': 'Numéros auto',
       text: 'Конструктор авто- и мотономеров',

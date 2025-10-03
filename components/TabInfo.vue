@@ -108,8 +108,8 @@ const months = period.getMonth()
     }
   }
 
-  &__text ::v-deep { 
-    p {
+  &__text { 
+    :deep(p) {
       @include font(18px, 26px);
       padding-bottom: 12px;
 
@@ -118,7 +118,7 @@ const months = period.getMonth()
       }
     }
 
-    ul {
+    :deep(ul) {
       list-style: none;
       @include flex;
       flex-wrap: wrap;
@@ -131,7 +131,7 @@ const months = period.getMonth()
       }
     }
 
-    li {
+    :deep(li) {
       background: $gradient;
       padding: 8px;
       @include font(14px, 26px, 400, $white);
@@ -142,7 +142,7 @@ const months = period.getMonth()
       }
     }
 
-    .column-title {
+    :deep(.column-title) {
       @include font(20px, 26px, 500);
       padding-bottom: 12px;
 
@@ -151,7 +151,7 @@ const months = period.getMonth()
       }
     }
 
-    .column-bold {
+    :deep(.column-bold) {
       @include font(20px, 26px, 700);
       padding-bottom: 12px;
     }

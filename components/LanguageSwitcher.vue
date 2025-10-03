@@ -40,8 +40,8 @@ const locales = [
 .lang-switcher {
   position: relative;
 
-  &__select ::v-deep {
-    button {
+  &__select {
+    :deep(button) {
       text-transform: uppercase;
       width: 86px;
     }
