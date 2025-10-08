@@ -182,6 +182,42 @@ export default defineEventHandler((event) => {
       link: 'https://semifur.ru/',
       labels: ['Vue', 'Pug', 'Stylus'],
       order: 6
+    },
+    {
+      photo: '/img/critical-space-strike.gif',
+      name: 'Critical Space Strike',
+      'en-name': 'Critical Space Strike',
+      'fr-name': 'Critical Space Strike',
+      text: 'Мини-игра',
+      'en-text': 'A mini-game',
+      'fr-text': 'Mini jeu',
+      link: 'https://html5-game-strike.vercel.app/',
+      labels: ['Canvas', 'TypeScript', 'Vitest'],
+      order: 7
+    },
+    {
+      photo: '/img/fitofarm-min.png',
+      name: 'Фитофарм',
+      'en-name': 'Phytopharm',
+      'fr-name': 'Phytopharm',
+      text: 'Лекарственные травы и сборы',
+      'en-text': 'Herbs in medical supplies',
+      'fr-text': 'Herbes médicinales dans les médicaments',
+      link: 'https://fitofarm.ru/',
+      labels: ['Vue', 'Pug', 'Stylus'],
+      order: 8
+    },
+    {
+      photo: '/img/tlled-min.png',
+      name: 'Технологии света',
+      'en-name': 'Light technology',
+      'fr-name': 'Technologie de la lumière',
+      text: 'Каталог светильников',
+      'en-text': 'The catalog of lamps',
+      'fr-text': 'Catalogue de luminaires',
+      link: 'https://tl-led.ru/',
+      labels: ['Vue', 'Pug', 'Stylus'],
+      order: 9
     }
   ]
 
