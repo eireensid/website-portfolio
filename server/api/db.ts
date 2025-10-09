@@ -184,7 +184,7 @@ export default defineEventHandler((event) => {
       order: 6
     },
     {
-      photo: '/img/critical-space-strike.gif',
+      photo: '/img/critical-space-strike-min.gif',
       name: 'Critical Space Strike',
       'en-name': 'Critical Space Strike',
       'fr-name': 'Critical Space Strike',
@@ -208,14 +208,14 @@ export default defineEventHandler((event) => {
       order: 8
     },
     {
-      photo: '/img/tlled-min.png',
-      name: 'Технологии света',
-      'en-name': 'Light technology',
-      'fr-name': 'Technologie de la lumière',
-      text: 'Каталог светильников',
-      'en-text': 'The catalog of lamps',
-      'fr-text': 'Catalogue de luminaires',
-      link: 'https://tl-led.ru/',
+      photo: '/img/ruheatex-min.png',
+      name: 'Heatex',
+      'en-name': 'Heatex',
+      'fr-name': 'Heatex',
+      text: 'Передовые Греющие Технологии',
+      'en-text': 'Specializes in plate and rotary heat exchangers',
+      'fr-text': 'Se spécialise dans les échangeurs de chaleur',
+      link: 'https://ruheatex.ru/',
       labels: ['Vue', 'Pug', 'Stylus'],
       order: 9
     }
